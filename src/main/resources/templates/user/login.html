@@ -1,0 +1,41 @@
+<!-- ======= Breadcrumbs Section ======= -->
+<main id="main">
+<!-- ======= Breadcrumbs Section ======= -->
+<section class="breadcrumbs">
+	<div class="container">
+
+		<div class="d-flex justify-content-between align-items-center">
+			<ol>
+			</ol>
+		</div>
+
+	</div>
+</section><!-- End Breadcrumbs Section -->
+	<div>
+		<section class= "container-fluid">
+			<section class= "row justify-content-center">
+				<section class= "col-12 col-sm-6 col-md-3">
+					<form class="form-container" role="form" th:action="@{/login}" method="post">
+					  <div class="form-group mb-4">
+						<label for="username">Потребителско име</label>
+						<input class="form-control" id="username" aria-describedby="usernameHelp" name = "username" placeholder="Потребителско име">
+						<small id="usernameHelp" class="form-text text-muted">Въведете вашето потребителско име</small>
+					  </div>
+					  <div class="form-group mb-4">
+						<label for="password">Парола</label>
+						<input type="password" class="form-control" id="password" name = "password" placeholder="Парола">
+						<small id="passwordHelp" class="form-text text-muted">Въведете вашата парола</small>
+					  </div>
+					  <div class="form-check mb-4">
+						<input type="checkbox" class="form-check-input" th:name= "@{rememberMe}" id="exampleCheck1">
+						<label class="form-check-label" for="exam	pleCheck1">Запомни ме</label>
+					  </div>
+					  <button type="submit" class="btn btn-primary btn-block">Вход</button>
+					</form>
+				</section>
+			</section>
+			<div id="left"></div>
+			<div id="right"></div>
+	</div>
+</main>
+
