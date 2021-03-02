@@ -11,8 +11,10 @@ public interface ViewConstants {
 	String RegisterView = "user/register";
 	
 	String ProfileView = "user/profile";
-	
+
 	String GameDataView = "admin/editgamedata";
+
+	String AdminView =  "admin/adminpage";
 	
 	String GuideView = "pages/guide";
 	

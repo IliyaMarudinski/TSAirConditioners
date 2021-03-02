@@ -57,6 +57,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.TasevAirConditioners">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="D:/TaseviAirConditioners" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -175,7 +188,7 @@
       <workItem from="1614440788716" duration="2486000" />
       <workItem from="1614444437790" duration="4116000" />
       <workItem from="1614520190673" duration="32149000" />
-      <workItem from="1614628128866" duration="6174000" />
+      <workItem from="1614628128866" duration="10389000" />
     </task>
     <servers />
   </component>

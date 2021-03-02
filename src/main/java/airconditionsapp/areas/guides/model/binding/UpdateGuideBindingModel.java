@@ -2,7 +2,7 @@ package airconditionsapp.areas.guides.model.binding;
 
 import java.util.List;
 
-import airconditionsapp.areas.gamedata.entities.Hero;
+import airconditionsapp.areas.articles.entities.Hero;
 
 
 public class UpdateGuideBindingModel {

@@ -21,7 +21,7 @@ import javax.persistence.Transient;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import airconditionsapp.areas.gamedata.entities.Hero;
+import airconditionsapp.areas.articles.entities.Hero;
 import airconditionsapp.areas.guides.entities.Guide;
 
 

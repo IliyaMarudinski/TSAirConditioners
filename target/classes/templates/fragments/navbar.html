@@ -31,7 +31,7 @@
 <!--    </form>-->
 <!--    <form th:action="@{/user/searchUser}" method="post" sec:authorize="isAuthenticated" class="form-inline my-2 my-lg-0">-->
 <!--      <a class="nav-link" th:href="@{/pages/newguide}">Моите запазени климатици</a>-->
-<!--      <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link" th:href="@{/admin/editgamedata}">Game Data</a>-->
+<!--      <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link" th:href="@{/admin/editgamedata}">Админ</a>-->
 <!--      <input th:name="searchword" class="form-control mr-sm-2" type="search" placeholder="Search user" aria-label="Search">-->
 <!--      &lt;!&ndash;-->
 <!--      <select class=" form-control  mr-sm-2 btn btn-dark" name="searchBy" id="searchBy">-->
@@ -65,6 +65,7 @@
                 <li><a class="nav-link scrollto " href="#portfolio">Каталог</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Контакти</a></li>
                 <li sec:authorize="isAuthenticated"><a class="nav-link scrollto " th:href="@{/user/profile/{id}(id=${userId})}">Моят Профил</a></li>
+                <li sec:authorize="hasRole('ROLE_ADMIN')"><a class="nav-link scrollto " th:href="@{/admin/articles}">Админ</a></li>
                 <li sec:authorize="isAuthenticated"><a class="nav-link scrollto " th:href="@{/logout}">Отписване</a></li>
                 <li sec:authorize="isAnonymous()"><a class="nav-link scrollto" th:href="@{/user/register}">Регистрация</a></li>
                 <li sec:authorize="isAnonymous()"><a class="nav-link scrollto" th:href="@{/user/login}">Вход</a></li>

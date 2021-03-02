@@ -3,8 +3,8 @@ package airconditionsapp.areas.guides.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import airconditionsapp.areas.gamedata.repositories.ItemsRepository;
-import airconditionsapp.areas.gamedata.repositories.RunesRepository;
+import airconditionsapp.areas.articles.repositories.ItemsRepository;
+import airconditionsapp.areas.articles.repositories.RunesRepository;
 import airconditionsapp.areas.guides.entities.Guide;
 import airconditionsapp.areas.guides.model.binding.UpdateGuideBindingModel;
 import airconditionsapp.areas.guides.repositories.GuideRepositories;

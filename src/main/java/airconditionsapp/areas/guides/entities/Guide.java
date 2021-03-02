@@ -19,9 +19,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import airconditionsapp.areas.gamedata.entities.Hero;
-import airconditionsapp.areas.gamedata.entities.Items;
-import airconditionsapp.areas.gamedata.entities.Runes;
+import airconditionsapp.areas.articles.entities.Hero;
+import airconditionsapp.areas.articles.entities.Items;
+import airconditionsapp.areas.articles.entities.Runes;
 import airconditionsapp.areas.users.entities.User;
 
 @Entity

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import airconditionsapp.areas.gamedata.services.GameDataService;
+import airconditionsapp.areas.articles.services.GameDataService;
 import airconditionsapp.areas.guides.entities.Guide;
 import airconditionsapp.areas.guides.model.binding.UpdateGuideBindingModel;
 import airconditionsapp.areas.guides.services.GuideService;
