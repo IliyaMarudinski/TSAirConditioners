@@ -19,8 +19,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import airconditionsapp.areas.articles.entities.Hero;
-import airconditionsapp.areas.articles.entities.Items;
+import airconditionsapp.areas.articles.entities.AirConditioners;
+import airconditionsapp.areas.articles.entities.Services;
 import airconditionsapp.areas.articles.entities.Runes;
 import airconditionsapp.areas.users.entities.User;
 
@@ -31,20 +31,20 @@ public class Guide{
 	private int    id;
 	private String name;
 	private User   user;
-	private Hero   heroId;
+	private AirConditioners airConditionersId;
 	private String description;
 	private char   maxAbility;
 	private char   startWithAbility;
 	private Set<User> users = new HashSet<User>();
 	private Set<Runes> runes = new HashSet<>();
-	private List<Items> items = new ArrayList<>();
+	private List<Services> items = new ArrayList<>();
 	
 	public Guide() {
 		
 	}
 	
-	public Guide(Hero heroId, String description, char maxAbility, char startWithAbility) {
-		this.heroId = heroId;
+	public Guide(AirConditioners airConditionersId, String description, char maxAbility, char startWithAbility) {
+		this.airConditionersId = airConditionersId;
 		this.description = description;
 		this.maxAbility = maxAbility;
 		this.startWithAbility = startWithAbility;
@@ -70,11 +70,11 @@ public class Guide{
 
 	@OneToOne()
 	@JoinColumn(name = "hero_Id", referencedColumnName = "id")
-	public Hero getHeroId() {
-		return heroId;
+	public AirConditioners getHeroId() {
+		return airConditionersId;
 	}
-	public void setHeroId(Hero heroId) {
-		this.heroId = heroId;
+	public void setHeroId(AirConditioners airConditionersId) {
+		this.airConditionersId = airConditionersId;
 	}
 	
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -118,16 +118,16 @@ public class Guide{
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name="guide_items")
-	public List<Items> getItems() {
+	public List<Services> getItems() {
 		return items;
 	}
 
-	public void setItems(List<Items> items) {
+	public void setItems(List<Services> items) {
 		this.items = items;
 	}
 	
 	@Transient
-	public void addItem(Items item) {
+	public void addItem(Services item) {
 		this.items.add(item);
 	}
 	

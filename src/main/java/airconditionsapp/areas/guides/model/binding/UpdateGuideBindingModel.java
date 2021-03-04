@@ -2,7 +2,7 @@ package airconditionsapp.areas.guides.model.binding;
 
 import java.util.List;
 
-import airconditionsapp.areas.articles.entities.Hero;
+import airconditionsapp.areas.articles.entities.AirConditioners;
 
 
 public class UpdateGuideBindingModel {
@@ -13,7 +13,7 @@ public class UpdateGuideBindingModel {
 	private char   maxAbility;
 	private char   startWithAbility;
 	private String   userId;
-	private Hero   heroId;
+	private AirConditioners airConditionersId;
 	private List<Integer> items;
 	private int rune;
 	
@@ -69,12 +69,12 @@ public class UpdateGuideBindingModel {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public Hero getHeroId() {
-		return heroId;
+	public AirConditioners getHeroId() {
+		return airConditionersId;
 	}
 
-	public void setHeroId(Hero heroId) {
-		this.heroId = heroId;
+	public void setHeroId(AirConditioners airConditionersId) {
+		this.airConditionersId = airConditionersId;
 	}
 
 	

@@ -13,7 +13,7 @@ public interface UserService {
 	boolean updateUser(UpdateProfileBindingModel bindingModel);
 	Set<User> getFollowed(String userName);
 	List<User> searchUserByName(String searchWord);
-	boolean addToFavorites(int guideId, String user);
-	void deleteFavorite(int id, String user);
+//	boolean addToFavorites(int guideId, String user);
+//	void deleteFavorite(int id, String user);
 
 }

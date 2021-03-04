@@ -13,15 +13,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="hero_roles")
-public class HeroRole {
+public class Brands {
     private int id;
     private String name;
-    private Set<Hero> heroes = new HashSet<Hero>();  
+    private Set<AirConditioners> airConditioners = new HashSet<AirConditioners>();
     
-    public HeroRole() {
+    public Brands() {
 	}
     
-	public HeroRole(String name) {
+	public Brands(String name) {
 		this.name = name;
 	}
 
@@ -42,12 +42,12 @@ public class HeroRole {
 	}
 
 	@ManyToMany(mappedBy = "heroRoles")
-	public Set<Hero> getHeroes() {
-		return heroes;
+	public Set<AirConditioners> getHeroes() {
+		return airConditioners;
 	}
 
-	public void setHeroes(Set<Hero> heroes) {
-		this.heroes = heroes;
+	public void setHeroes(Set<AirConditioners> airConditioners) {
+		this.airConditioners = airConditioners;
 	}
     
 }

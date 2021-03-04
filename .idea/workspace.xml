@@ -4,7 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37b78bc4-1e7c-4111-ba3f-b0eb823b8c3f" name="Default Changelist" comment="" />
+    <list default="true" id="37b78bc4-1e7c-4111-ba3f-b0eb823b8c3f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/EnvServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/resources/templates/pages/editguide.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/main/resources/templates/pages/editguide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/resources/templates/pages/guide.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/main/resources/templates/pages/guide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/src/main/resources/templates/pages/newguide.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/src/main/resources/templates/pages/newguide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/controller/ArticlesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/controller/ArticlesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/entities/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/entities/AirConditioners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/entities/HeroRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/entities/Brands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/entities/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/entities/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/model/binding/HeroApiModelBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/model/binding/ItemsApiModelBinding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/model/binding/RuneAddModelBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/model/binding/ServiceAddModelBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/HeroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/AirConditionersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/HeroRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/BrandsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/ItemsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/ServicesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/RunesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/GameDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/EnvService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/GameDataServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/guides/controller/GuideController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/guides/controller/GuideController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/guides/entities/Guide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/guides/entities/Guide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/guides/model/binding/UpdateGuideBindingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/guides/model/binding/UpdateGuideBindingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/guides/services/GuideService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/guides/services/GuideService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/guides/services/GuideServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/guides/services/GuideServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/users/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/users/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/users/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/users/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/users/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/users/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/users/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/users/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/adminpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/adminpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/newguide.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/newguide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/controller/ArticlesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/controller/ArticlesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/entities/Hero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/entities/HeroRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/entities/Items.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/model/binding/HeroApiModelBinding$Data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/model/binding/HeroApiModelBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/model/binding/ItemsApiModelBinding$Data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/model/binding/ItemsApiModelBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/model/binding/RuneAddModelBinding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/repositories/HeroRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/repositories/HeroRoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/repositories/ItemsRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/repositories/RunesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/services/GameDataService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/services/GameDataServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/guides/controller/GuideController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/guides/entities/Guide.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/guides/entities/Guide.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/guides/model/binding/UpdateGuideBindingModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/guides/model/binding/UpdateGuideBindingModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/guides/services/GuideService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/guides/services/GuideServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/users/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/users/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/users/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/users/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/users/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/users/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/users/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/users/services/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/adminpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/adminpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pages/newguide.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pages/newguide.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,15 +115,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.TasevAirConditioners">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,6 +204,7 @@
     <configuration name="TasevAirConditioners" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="airconditionsapp.TasevClimaApp" />
+      <option name="ENABLE_JMX_AGENT" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -188,12 +245,27 @@
       <workItem from="1614440788716" duration="2486000" />
       <workItem from="1614444437790" duration="4116000" />
       <workItem from="1614520190673" duration="32149000" />
-      <workItem from="1614628128866" duration="10389000" />
+      <workItem from="1614628128866" duration="11188000" />
+      <workItem from="1614767539618" duration="1817000" />
+      <workItem from="1614769532949" duration="2937000" />
+      <workItem from="1614811087242" duration="6042000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/demo$TasevAirConditioners.ic" NAME="TasevAirConditioners Coverage Results" MODIFIED="1614444394761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

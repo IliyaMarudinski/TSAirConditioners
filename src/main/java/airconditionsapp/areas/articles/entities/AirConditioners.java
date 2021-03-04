@@ -16,19 +16,19 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "heroes")
-public class Hero {
+@Table(name = "airconditioner")
+public class AirConditioners {
 	private int id;
 	private String name;
 	private String img;
 	private String description;
 	private String shortDescription;
-	private Set<HeroRole> heroRoles = new HashSet<HeroRole>();
+	private Set<Brands> brands = new HashSet<Brands>();
 	
-	public Hero() {
+	public AirConditioners() {
 	}
 	
-	public Hero(String name, String imgPath, String description, String shortDescription) {
+	public AirConditioners(String name, String imgPath, String description, String shortDescription) {
 		this.name = name;
 		this.img = imgPath;
 		this.description = description;
@@ -55,15 +55,15 @@ public class Hero {
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "hero_role")
-	public Set<HeroRole> getHeroRoles() {
-		return heroRoles;
+	public Set<Brands> getHeroRoles() {
+		return brands;
 	}
-	public void setHeroRoles(Set<HeroRole> heroRoles) {
-		this.heroRoles = heroRoles;
+	public void setHeroRoles(Set<Brands> brands) {
+		this.brands = brands;
 	}
 	@Transient
-	public void addHeroRole(HeroRole role) {
-		this.heroRoles.add(role);
+	public void addHeroRole(Brands role) {
+		this.brands.add(role);
 	}
 	
 	@Column(name = "img")

@@ -91,30 +91,30 @@ public class UserController {
 		
 	}
 	
-	@RequestMapping("addToFavorites/{id}")
-	public String addGuideToFavorites(@PathVariable Integer id, Principal principal, RedirectAttributes redirectAttributes) {
-		
-		if(userService.addToFavorites(id, principal.getName())) {
-			
-			redirectAttributes.addFlashAttribute("msg","success");
-			
-			
-		}else {
-			redirectAttributes.addFlashAttribute("msg","warning");
-		}
-		
-		
-		return "redirect:/pages/guide/" +id;
-	}
-	
-	@RequestMapping("favorite/delete/{id}")
-	public String deleteFavorites(@PathVariable Integer id, Principal principal, RedirectAttributes redirectAttributes) {
-		
-		userService.deleteFavorite(id, principal.getName());
-		redirectAttributes.addFlashAttribute("msg","success");
-
-		return "redirect:/user/profile";
-	}
+//	@RequestMapping("addToFavorites/{id}")
+//	public String addGuideToFavorites(@PathVariable Integer id, Principal principal, RedirectAttributes redirectAttributes) {
+//
+//		if(userService.addToFavorites(id, principal.getName())) {
+//
+//			redirectAttributes.addFlashAttribute("msg","success");
+//
+//
+//		}else {
+//			redirectAttributes.addFlashAttribute("msg","warning");
+//		}
+//
+//
+//		return "redirect:/pages/guide/" +id;
+//	}
+//
+//	@RequestMapping("favorite/delete/{id}")
+//	public String deleteFavorites(@PathVariable Integer id, Principal principal, RedirectAttributes redirectAttributes) {
+//
+//		userService.deleteFavorite(id, principal.getName());
+//		redirectAttributes.addFlashAttribute("msg","success");
+//
+//		return "redirect:/user/profile";
+//	}
 	
 	@GetMapping("searchResult")
 	public String searchResult(Model model) {

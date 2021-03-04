@@ -1,46 +1,72 @@
-<div class="row justify-content-around mt-5">
-    <form>
-        <div class='col-auto'>
-            <div class="row">
-                <h2>Heroes</h2>
-            </div>
-            <div class='row'>
-                <a th:href="@{/admin/update_heroes}" class="btn btn-primary">Update from Api</a>
-            </div>
-        </div>
-    </form>
 
-    <div class='col-auto'>
-        <div class="row">
-            <h2>Items</h2>
+<section class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <ol>
+            </ol>
         </div>
-        <div class='row'>
-            <a th:href="@{/admin/update_items}" class="btn btn-primary">Update from Api</a>
-        </div>
+
     </div>
+</section><!-- End Breadcrumbs Section -->
+
+
+<div class="row justify-content-around mt-5">
+<!--    <form>-->
+<!--        <div class='col-auto'>-->
+<!--            <div class="row">-->
+<!--                <h2>Heroes</h2>-->
+<!--            </div>-->
+<!--            <div class='row'>-->
+<!--                <a th:href="@{/admin/update_heroes}" class="btn btn-primary">Update from Api</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </form>-->
+
+<!--    <div class='col-auto'>-->
+<!--        <div class="row">-->
+<!--            <h2>Items</h2>-->
+<!--        </div>-->
+<!--        <div class='row'>-->
+<!--            <a th:href="@{/admin/update_items}" class="btn btn-primary">Update from Api</a>-->
+<!--        </div>-->
+<!--    </div>-->
 
     <div class='col-auto'>
         <div class="row">
-            <h2>Runes</h2>
+            <h2>Услуги</h2>
         </div>
         <div class='row'>
-            <form th:action="@{/admin/add_rune}" method="post">
+            <form th:action="@{/admin/add_service}" method="post">
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">Name</th>
+                        <th scope="col">Услуга описание</th>
+<!--                        <th scope="col">Цена</th>-->
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="rune:${runes}">
-                        <th scope="col" th:text="${rune.name}"></th>
+                    <tr th:each="service:${services}">
+                        <th scope="col" th:text="${service.name}"></th>
+                        <th scope="col" th:text="${service.description}"></th>
+                        <th scope="col" th:text="${service.price}"></th>
+                        <th scope="col" th:text="${service.itemNum}"></th>
                         <th>
-                            <a th:href="@{/admin/rune_delete/{id}(id=${rune.id})}" class="btn btn-primary">Delete</a>
+                            <a th:href="@{/admin/service_delete/{id}(id=${service.id})}" class="btn btn-primary">Изтрий</a>
                         </th>
                     </tr>
                     <tr>
                         <th scope="col">
-                            <input class = "form-control mr-sm-2" name="name" placeholder="Rune Name">
+                            <input class = "form-control mr-sm-2" name="name" placeholder="Текст">
+                        </th>
+                        <th scope="col">
+                            <input class = "form-control mr-sm-2" name="description" placeholder="Описание">
+                        </th>
+                        <th scope="col">
+                            <input class = "form-control mr-sm-2" name="price" placeholder="Цена">
+                        </th>
+                        <th scope="col">
+                            <input class = "form-control mr-sm-2" name="itemNum" placeholder="Приоритет">
                         </th>
                     </tr>
                     </tbody>

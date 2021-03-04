@@ -18,10 +18,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import airconditionsapp.areas.articles.entities.AirConditioners;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import airconditionsapp.areas.articles.entities.Hero;
 import airconditionsapp.areas.guides.entities.Guide;
 
 
@@ -38,7 +38,7 @@ public class User implements UserDetails {
 	private Set<Role> roles = new HashSet<>();
 	private Set<User> following = new HashSet<>();
 	private Set<User> followers = new HashSet<>();
-	private Set<Hero> favoriteHeroes = new HashSet<>();
+	private Set<AirConditioners> favoriteAirConditioners = new HashSet<>();
 	private Set<Guide> favoriteGuides = new HashSet<>();
 	private Set<Guide> myGuides = new HashSet<>();
 	
@@ -214,20 +214,20 @@ public class User implements UserDetails {
     
     @OneToMany(cascade = CascadeType.ALL,
          orphanRemoval = true)
-	public Set<Hero> getFavoriteHeroes() {
-		return favoriteHeroes;
+	public Set<AirConditioners> getFavoriteHeroes() {
+		return favoriteAirConditioners;
 	}
 
-	public void setFavoriteHeroes(Set<Hero> favoriteHeroes) {
-		this.favoriteHeroes = favoriteHeroes;
+	public void setFavoriteHeroes(Set<AirConditioners> favoriteAirConditioners) {
+		this.favoriteAirConditioners = favoriteAirConditioners;
 	}
 	
-	public void addFavoriteHeroe(Hero hero) {
-		this.favoriteHeroes.add(hero);
+	public void addFavoriteHeroe(AirConditioners airConditioners) {
+		this.favoriteAirConditioners.add(airConditioners);
 	}
 	
-	public void removeFavoriteHeroe(Hero hero) {
-		this.favoriteHeroes.remove(hero);
+	public void removeFavoriteHeroe(AirConditioners airConditioners) {
+		this.favoriteAirConditioners.remove(airConditioners);
 	}
 
 	
