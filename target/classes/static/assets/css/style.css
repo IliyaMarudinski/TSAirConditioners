@@ -648,6 +648,35 @@ section {
   background: #fafafa;
 }
 
+#services .box2 {
+  padding: 50px 20px;
+  margin-bottom: 50px;
+  text-align: center;
+  border: 3px solid #0067ab;
+  position: relative;
+  background: #e8f6ff;
+}
+
+.services-btn {
+  font-family: "Plovdiv Script" , fontPlovdiv ;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #0067ab;
+  color: #0067ab;
+}
+.services-btn:hover {
+  background: #0067ab;
+  border: 2px solid #0067ab;
+  color: white;
+}
+
 #services .icon {
   position: absolute;
   top: -36px;
@@ -693,6 +722,14 @@ section {
   font-size: 18px;
   margin-bottom: 15px;
   text-transform: uppercase;
+}
+
+#services .title_service {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #0067ab;
 }
 
 #services .title a {

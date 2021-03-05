@@ -5,8 +5,6 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-import airconditionsapp.areas.guides.entities.Guide;
-
 @Entity
 @Table(name = "services")
 public class Services {

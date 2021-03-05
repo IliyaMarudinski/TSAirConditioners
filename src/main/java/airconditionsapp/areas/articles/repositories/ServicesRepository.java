@@ -15,4 +15,5 @@ public interface ServicesRepository extends JpaRepository<Services, Integer>{
 	Services findById(int id);
 	@Query(value = "select NAME from SERVICES", nativeQuery = true)
 	public List<String> getAllServicesNames();
+
 }

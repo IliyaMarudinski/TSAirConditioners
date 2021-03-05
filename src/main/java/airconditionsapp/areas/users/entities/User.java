@@ -22,9 +22,6 @@ import airconditionsapp.areas.articles.entities.AirConditioners;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import airconditionsapp.areas.guides.entities.Guide;
-
-
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {
@@ -36,11 +33,8 @@ public class User implements UserDetails {
 	private String avatarPath;
 	private String password;	
 	private Set<Role> roles = new HashSet<>();
-	private Set<User> following = new HashSet<>();
-	private Set<User> followers = new HashSet<>();
 	private Set<AirConditioners> favoriteAirConditioners = new HashSet<>();
-	private Set<Guide> favoriteGuides = new HashSet<>();
-	private Set<Guide> myGuides = new HashSet<>();
+	//private Set<Guide> favoriteAirConditioners = new HashSet<>();
 	
 	public User() {
 	
@@ -162,109 +156,6 @@ public class User implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-    
-//	@ManyToMany(fetch = FetchType.EAGER)
-//	@JoinTable(name="user_followingUsers")
-//	public Set<User> getFollowingUsers() {
-//		return followingUsers;
-//	}
-//
-//	public void setFollowingUsers(Set<User> followingUsers) {
-//		this.followingUsers = followingUsers;
-//	}
-//	
-//	public void addFollowingUser(User user) {
-//		this.followingUsers.add(user);
-//	}
-	
-//	@ManyToMany(cascade = CascadeType.ALL)
-//	@JoinTable(name     = "user_relationship")
-//	@JoinColumn(name    = "FOLLOWED_ID")
-//    @JoinColumn(name    = "FOLLOWER_ID")
-	
-    @ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(     name="user_relationship", 
-	         joinColumns=@JoinColumn(name="followed_id"),
-	  inverseJoinColumns=@JoinColumn(name="follower_id"))  	
-	public Set<User> getFollowers() {
-		return followers;
-	}
 
-	public void setFollowers(Set<User> followers) {
-	    this.followers = followers;
-	}
-
-    public void addFollower(User follower) {
-        followers.add(follower);
-        follower.following.add(this);
-    }
- 
-    @ManyToMany(mappedBy = "followers")
-    public Set<User> getFollowing() {
-        return following;
-    }
-
-    public void setFollowing(Set<User> following) {
-        this.following = following;
-    }
-
-    public void addFollowing(User followed) {
-        followed.addFollower(this);
-    }
-    
-    @OneToMany(cascade = CascadeType.ALL,
-         orphanRemoval = true)
-	public Set<AirConditioners> getFavoriteHeroes() {
-		return favoriteAirConditioners;
-	}
-
-	public void setFavoriteHeroes(Set<AirConditioners> favoriteAirConditioners) {
-		this.favoriteAirConditioners = favoriteAirConditioners;
-	}
-	
-	public void addFavoriteHeroe(AirConditioners airConditioners) {
-		this.favoriteAirConditioners.add(airConditioners);
-	}
-	
-	public void removeFavoriteHeroe(AirConditioners airConditioners) {
-		this.favoriteAirConditioners.remove(airConditioners);
-	}
-
-	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "users_favorite_guides")
-	public Set<Guide> getFavoriteGuides() {
-		return favoriteGuides;
-	}
-
-	public void setFavoriteGuides(Set<Guide> favoriteGuides) {
-		this.favoriteGuides = favoriteGuides;
-	}
-	
-	public void addFavoriteGuide(Guide guide) {
-		this.favoriteGuides.add(guide);
-	}
-	
-	public void removeFavoriteGuide(Guide guide) {
-		this.favoriteGuides.remove(guide);
-	}
-
-	
-	@OneToMany(cascade = CascadeType.ALL,
-         orphanRemoval = true,
-              mappedBy = "user")
-	public Set<Guide> getMyGuides() {
-		return myGuides;
-	}
-
-	public void setMyGuides(Set<Guide> myGuides) {
-		this.myGuides = myGuides;
-	}
-	
-	@Transient
-	public void addGuideToUser(Guide guide) {
-		this.myGuides.add(guide);
-	}
-	
 	
 }

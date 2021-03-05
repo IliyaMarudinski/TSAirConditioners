@@ -49,15 +49,6 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Set<User> getFollowed(String userName) {
-
-		User user = userRepository.findByUsername(userName); 
-		
-		
-		return user.getFollowers();          
-	}
-
-	@Override
 	public List<User> searchUserByName(String searchWord) {
 		
 		return userRepository.findByUsernameContaining(searchWord);

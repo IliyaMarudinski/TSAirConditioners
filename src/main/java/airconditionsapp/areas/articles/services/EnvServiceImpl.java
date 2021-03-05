@@ -4,6 +4,7 @@ import java.util.List;
 
 import airconditionsapp.areas.articles.model.binding.ServiceAddModelBinding;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import airconditionsapp.areas.articles.entities.AirConditioners;
@@ -27,7 +28,7 @@ public class EnvServiceImpl implements EnvService {
 	}
 
 	@Override
-	public List<Services> getAllServices() {
+	public List<Services> getAllServices(Sort by) {
 		return serviceRepo.findAll();
 	}
 

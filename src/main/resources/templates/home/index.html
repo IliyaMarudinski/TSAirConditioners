@@ -1,156 +1,4 @@
-
-<!--  <div class="container">-->
-<!--  	<div class="row justify-content-around">-->
-<!--  		<div class='col-auto center-block'>-->
-<!--			<img class='img-cust-align' th:src="@{images/omega_squad_teemo_dock_icon_by_outlawninja_d8nx33a-fullview.png}">-->
-<!--  		</div>-->
-<!--  		<div class='col-auto center-block'>-->
-<!--		    <h1 class="text text-center mt-2 cool-font">-->
-<!--		      League Of Legend Heroes-->
-<!--		    </h1> -->
-<!--  		</div>-->
-<!--	  </div>-->
-<!--	  <div class="row justify-content-around">-->
-<!--	    <div class="text grey-color text-center mt-2">-->
-<!--	      List with all of the LoL Heroes-->
-<!--	    </div> -->
-<!--	  </div>-->
-<!--  </div>-->
-
-<!--  <div class="container">-->
-<!--    <div class="row mt-2 mb-4 btn-group-justified">-->
-<!--        <div class="col btn-group mb-2">-->
-<!--             <button id="all" href="#" type="button" class="btn btn-dark selected" onclick='sortById("all")'>ALL</button>-->
-<!--        </div>-->
-<!--        <div class="col btn-group mb-2">-->
-<!--             <button id="Assassin" href="#" type="button" class="btn btn-dark "  onclick='sortById("Assassin")'>ASSASSINS</button>-->
-<!--        </div>-->
-<!--        <div class="col btn-group mb-2">-->
-<!--            <button id="Fighter" href="#"  type="button" class="btn btn-dark" onclick='sortById("Fighter")'>FIGHTERS</button>-->
-<!--        </div>-->
-<!--        <div class="col btn-group mb-2"> -->
-<!--            <button id="Mage" href="#"  type="button" class="btn btn-dark" onclick='sortById("Mage")'>MAGES</button>-->
-<!--        </div> -->
-<!--        <div class="col btn-group mb-2">-->
-<!--            <button  id="Marksman" href="#" type="button" class="btn btn-dark" onclick='sortById("Marksman")'>MARKSMAN</button>-->
-<!--        </div>-->
-<!--        <div class="col btn-group mb-2">-->
-<!--            <button  id="Support" href="#" type="button" class="btn btn-dark" onclick='sortById("Support")'>SUPPORTS</button>-->
-<!--        </div>-->
-<!--        <div class="col btn-group mb-2">-->
-<!--            <button  id="Tank" href="#" type="button" class="btn btn-dark" onclick='sortById("Tank")'>TANKS</button>-->
-<!--        </div> -->
-<!--        <div class="col btn-group mb-2">-->
-<!--            <button id="view-button"  href="#" type="button" class="btn btn-primary" onclick='changeView()'>Gallery view</button>-->
-<!--        </div>   -->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <div class="container" id='champsList'>-->
-<!--    <table class="table">-->
-<!--      <tbody id='tableBody'>-->
-<!--      </tbody> -->
-<!--     </table>-->
-<!--  </div>-->
-<!--  <div class="container" id='galeryContainer'>-->
-<!--      <div class="row justify-content-around" id='galeryView'>-->
-<!--      </div>-->
-<!--  </div>-->
-<!--  <div id="left"></div>-->
-<!--  <div id="right"></div>-->
-<!--  -->
-
-<!--<script type="text/javascript"> -->
-<!--    $(document).ready(function () { -->
-<!--            document.getElementById('galeryContainer').classList.add('hideme');          -->
-<!--            load_json("all");-->
-<!--    });-->
-
-<!--    function load_json(id){-->
-<!--      var isTableVIew = false;-->
-<!--      document.getElementById('tableBody').innerHTML = '';-->
-<!--      document.getElementById('galeryView').innerHTML = '';-->
-<!--      if (document.getElementById('galeryContainer').classList.contains("hideme")) isTableVIew = true;-->
-<!--      $.ajax({//-->
-<!--                method: "GET",-->
-<!--                url: "http://ddragon.leagueoflegends.com/cdn/10.24.1/data/en_US/champion.json",-->
-<!--                dataType: "json"-->
-<!--            }).done(function(mydata){-->
-<!--                $.each(mydata.data, (i, item ) =>{-->
-<!--                    if(contains(item.tags, id) || id == "all"){-->
-<!--                        if(isTableVIew){-->
-<!--                          $('#tableBody').append('<tr class="height-ajust" id="' + item.id + '"><td> <div class="text bold div-center" style="width:140px">' + item.name + '</div> <div class="div-center"> <img src="http://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/' +-->
-<!--                              item.id + '.png" class="img-fluid" alt="Responsive image"> </div></td><td class="align-middle"><div class="bold">'+ item.title + '</div><div>' + item.blurb + '</div></td></tr>')-->
-<!--                        } else {-->
-<!--                          $('#galeryView').append('<div class="col-4 mb-5 galery-item" id="' + item.id  +  '"><div> <div class="text bold div-center">' + item.name + ' - ' + item.title + '</div> <div class="div-center"> <img src='+-->
-<!--                              '"http://ddragon.leagueoflegends.com/cdn/img/champion/loading/' + item.id + '_0.jpg" '+-->
-<!--                              ' class="img-fluid" alt="Responsive image"> </div></div><td class="align-middle"></div></div>')-->
-<!--                        }-->
-<!--                        $.each(item.tags, (j, tag) =>{-->
-<!--                          document.getElementById(item.id).classList.add(tag);-->
-<!--                        })-->
-<!--                    }-->
-<!--                })                                                             -->
-<!--            })-->
-<!--    };-->
-
-<!--    function contains(a, obj) {-->
-<!--      var i = a.length;-->
-<!--       while (i&#45;&#45;) {-->
-<!--        console.log(a[i], obj);-->
-<!--         if (a[i] === obj) {-->
-<!--             return true;-->
-<!--         }-->
-<!--      }-->
-<!--      return false;-->
-<!--    }-->
-
-<!--    function sortById(id) {-->
-<!--        $('.selected').removeClass('selected');-->
-<!--        document.getElementById(id).classList.add('selected');-->
-<!--        // const tableElements = document.getElementsByTagName('tr');-->
-<!--        // $.each(tableElements, (i, item ) =>{-->
-<!--        //     console.log("Check :" + item + id)-->
-<!--        //     if(item.classList.contains(id) || id == "all"){-->
-<!--        //         item.style.display = null;-->
-<!--        //     } else {-->
-<!--        //         item.style.display = "none";-->
-<!--        //     }-->
-<!--        // });-->
-<!--        // const galeryElements = document.getElementsByClassName('galery-item');-->
-<!--        // $.each(galeryElements, (i, item ) =>{-->
-<!--        //     console.log("Check :" + item + id)-->
-<!--        //     if(item.classList.contains(id) || id == "all"){-->
-<!--        //         item.style.display = null;-->
-<!--        //     } else {-->
-<!--        //         item.style.display = "none";-->
-<!--        //     }-->
-<!--        // });-->
-<!--        load_json(id);-->
-<!--    };-->
-
-<!--    function changeView(){-->
-<!--        if (document.getElementById('galeryContainer').classList.contains("hideme")){-->
-<!--            document.getElementById('champsList').classList.remove('showme');-->
-<!--            document.getElementById('champsList').classList.add('hideme');-->
-<!--            document.getElementById('galeryContainer').classList.remove('hideme');-->
-<!--            document.getElementById('galeryContainer').classList.add('showme');-->
-<!--            document.getElementById("view-button").innerHTML = "Table view";-->
-<!--        }else{-->
-<!--            document.getElementById('galeryContainer').classList.remove('showme');-->
-<!--            document.getElementById('galeryContainer').classList.add('hideme');-->
-<!--            document.getElementById('champsList').classList.remove('hideme');-->
-<!--            document.getElementById('champsList').classList.add('showme');-->
-<!--            document.getElementById("view-button").innerHTML = "Gallery view";-->
-<!--        }-->
-<!--        var selButton = document.getElementsByClassName('selected')[0].id;-->
-<!--        console.log('!!!!!!!!!!!!!!!!' + selButton);-->
-<!--        load_json(selButton);-->
-<!--    };-->
-
-<!--</script>-->
-
-<!-- ======= Hero Section ======= -->
+<!-- ======= Home Section ======= -->
 <section id="home">
     <div class="home-container" data-aos="zoom-in" data-aos-delay="100">
         <h1>Добре дошли в нашия сайт</h1>
@@ -158,7 +6,7 @@
         <a href="#portfolio" class="btn-get-started">Каталог климатици</a>
         <a href="#services" class="btn-get-started">Предлагани услуги</a>
     </div>
-</section><!-- End Hero Section -->
+</section><!-- End Home Section -->
 
 <main id="main">
 
@@ -172,25 +20,25 @@
                     <div class="col-lg-6 content order-lg-1 order-2">
                         <h2 class="title">Няколко думи за нас</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Някакъв текст, тук... текст текст.. Някакъв текст, тук... текст текст..Някакъв текст, тук... текст текст..Някакъв текст, тук... текст текст..Някакъв текст, тук... текст текст..Някакъв текст, тук... текст текст..
                         </p>
 
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="bi bi-briefcase"></i></div>
-                            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                            <div class="icon"><i class="bi bi-card-checklist"></i></div>
+                            <h4 class="title"><a href="">Качество</a></h4>
+                            <p class="description">Използваме само висококачествени материали и надеждни доставчици</p>
                         </div>
 
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                             <div class="icon"><i class="bi bi-card-checklist"></i></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <h4 class="title"><a href="">Надеждност</a></h4>
+                            <p class="description">Може да разчитате на нашите услуги</p>
                         </div>
 
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                            <div class="icon"><i class="bi bi-binoculars"></i></div>
-                            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                            <div class="icon"><i class="bi bi-card-checklist"></i></div>
+                            <h4 class="title"><a href="">Добро обслужване</a></h4>
+                            <p class="description">Ще отговирм любезно на всички въпроси, които имате</p>
                         </div>
 
                     </div>
@@ -202,43 +50,40 @@
         </div>
 
         <!-- ======= Facts Section ======= -->
-    <!--    <section id="facts">-->
-        <div class="facts">
+<!--        <div class="facts">-->
 
-            <div class="container" data-aos="fade-up">
-                <div class="section-header">
-                    <h3 class="section-title">Facts</h3>
-                    <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-                </div>
-                <div class="row counters">
+<!--            <div class="container" data-aos="fade-up">-->
+<!--                <div class="section-header">-->
+<!--                    <h3 class="section-title">Facts</h3>-->
+<!--                    <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
+<!--                </div>-->
+<!--                <div class="row counters">-->
 
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Clients</p>
-                    </div>
+<!--                    <div class="col-lg-3 col-6 text-center">-->
+<!--                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>-->
+<!--                        <p>Clients</p>-->
+<!--                    </div>-->
 
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="534" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Projects</p>
-                    </div>
+<!--                    <div class="col-lg-3 col-6 text-center">-->
+<!--                        <span data-purecounter-start="0" data-purecounter-end="534" data-purecounter-duration="1" class="purecounter"></span>-->
+<!--                        <p>Projects</p>-->
+<!--                    </div>-->
 
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Hours Of Support</p>
-                    </div>
+<!--                    <div class="col-lg-3 col-6 text-center">-->
+<!--                        <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>-->
+<!--                        <p>Hours Of Support</p>-->
+<!--                    </div>-->
 
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Hard Workers</p>
-                    </div>
+<!--                    <div class="col-lg-3 col-6 text-center">-->
+<!--                        <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>-->
+<!--                        <p>Hard Workers</p>-->
+<!--                    </div>-->
 
-                </div>
+<!--                </div>-->
 
-            </div>
-        </div>
-    <!--    </section>&lt;!&ndash; End Facts Section &ndash;&gt;-->
-
-        <!-- ======= Team Section ======= -->
+<!--            </div>-->
+<!--        </div>-->
+    <!-- ======= Team Section ======= -->
     <!--    <section id="team">-->
         <div class="team">
             <div class="container" data-aos="fade-up">
@@ -250,8 +95,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="pic"><img src="assets/img/team-1.jpg" alt=""></div>
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
+                            <h4>Сашо Тасев</h4>
+                            <span>Главен техник/инженер</span>
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -264,8 +109,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="member" data-aos="fade-up" data-aos-delay="200">
                             <div class="pic"><img src="assets/img/team-2.jpg" alt=""></div>
-                            <h4>Sarah Jhinson</h4>
-                            <span>Product Manager</span>
+                            <h4>Магдалена Тасева</h4>
+                            <span>Шеф, мениджър, собственик, управител</span>
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -278,8 +123,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="member" data-aos="fade-up" data-aos-delay="300">
                             <div class="pic"><img src="assets/img/team-3.jpg" alt=""></div>
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
+                            <h4>Петър Тасев</h4>
+                            <span>Калфа - подпира стълбата</span>
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -292,8 +137,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="member" data-aos="fade-up" data-aos-delay="400">
                             <div class="pic"><img src="assets/img/team-4.jpg" alt=""></div>
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
+                            <h4>Екатерина Тасева</h4>
+                            <span>Млад Меринджей</span>
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -312,56 +157,58 @@
     <!-- ======= Services Section ======= -->
     <section id="services">
         <div class="container" data-aos="fade-up">
-            <div class="section-header">
+            <div class="section-header" style="margin-bottom: 50px">
                 <h3 class="section-title">Предлагаме следните услуги</h3>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+<!--                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                     <div class="box">
-                        <div class="icon"><a href=""><i class="bi bi-briefcase"></i></a></div>
-                        <h4 class="title"><a href="">Продажба на климатици</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                        <div class="icon"><a><i class="bi-card-checklist"></i></a></div>
+                        <h4 class="title"><a>Продажба на климатици</a></h4>
+                        <p class="description">Описание на услугата тук !!!!</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                     <div class="box">
-                        <div class="icon"><a href=""><i class="bi bi-card-checklist"></i></a></div>
-                        <h4 class="title"><a href="">Сервизно и гаранционно обслужване</a></h4>
-                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                        <div class="icon"><a><i class="bi bi-card-checklist"></i></a></div>
+                        <h4 class="title"><a>Сервизно и гаранционно обслужване</a></h4>
+                        <p class="description">Описание на услугата тук !!!!</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                     <div class="box">
-                        <div class="icon"><a href=""><i class="bi bi-bar-chart"></i></a></div>
-                        <h4 class="title"><a href="">Монтаж и демонтаж</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        <div class="icon"><a><i class="bi bi-card-checklist"></i></a></div>
+                        <h4 class="title"><a>Монтаж и демонтаж</a></h4>
+                        <p class="description">Описание на услугата тук !!!!</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                     <div class="box">
-                        <div class="icon"><a href=""><i class="bi bi-binoculars"></i></a></div>
-                        <h4 class="title"><a href="">Ремонт на извънгаранционни климатици</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <div class="icon"><a><i class="bi-card-checklist"></i></a></div>
+                        <h4 class="title"><a>Ремонт на извънгаранционни климатици</a></h4>
+                        <p class="description">Описание на услугата тук !!!!</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                     <div class="box">
-                        <div class="icon"><a href=""><i class="bi bi-brightness-high"></i></a></div>
-                        <h4 class="title"><a href="">Ремонт на бяла техника</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                        <div class="icon"><a><i class="bi-card-checklist"></i></a></div>
+                        <h4 class="title"><a>Ремонт на бяла техника</a></h4>
+                        <p class="description">Описание на услугата тук !!!!</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                     <div class="box">
-                        <div class="icon"><a href=""><i class="bi bi-calendar4-week"></i></a></div>
-                        <h4 class="title"><a href="">Консултация за подходящите за вас уреди</a></h4>
-                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                        <div class="icon"><a><i class="bi-card-checklist"></i></a></div>
+                        <h4 class="title"><a>Консултация за подходящите за вас уреди</a></h4>
+                        <p class="description">Описание на услугата тук !!!!</p>
                     </div>
                 </div>
             </div>
-
+            <div class="col cta-btn-container text-center">
+                <a class="services-btn align-middle" style="padding: 20px" th:href="@{/pages/viewservices}" >Натиснете тук за да научите повече</a>
+            </div>
         </div>
     </section><!-- End Services Section -->
 
@@ -377,7 +224,6 @@
                     <a class="cta-btn align-middle" >0898ДЪРАБЪРА</a>
                 </div>
             </div>
-
         </div>
     </section><!-- End Call To Action Section -->
 
@@ -385,115 +231,117 @@
     <section id="portfolio" class="portfolio">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h3 class="section-title">Portfolio</h3>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                <h3 class="section-title">Марките, с които работим</h3>
+                <p class="section-description">Предлагаме всички марки и модели от всички ценови класове в България</p>
             </div>
 
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-12 d-flex justify-content-center">
-                    <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
-                    </ul>
-                </div>
-            </div>
+<!--            <div class="row" data-aos="fade-up" data-aos-delay="100">-->
+<!--                <div class="col-lg-12 d-flex justify-content-center">-->
+<!--                    <ul id="portfolio-flters">-->
+<!--                        <li data-filter="*" class="filter-active">All</li>-->
+<!--                        <li data-filter=".filter-app">App</li>-->
+<!--                        <li data-filter=".filter-card">Card</li>-->
+<!--                        <li data-filter=".filter-web">Web</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>App 1</h4>
-                        <p>App</p>
-                        <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <h4>Daikin</h4>
+<!--                        <p>App</p>-->
+<!--                        <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>-->
+<!--                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                    <img src="assets/img/portfolio/portfolio-2.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>Web 3</h4>
-                        <p>Web</p>
-                        <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <h4>Mitsubishi electrics</h4>
+<!--                        <p>Web</p>-->
+<!--                        <a href="assets/img/portfolio/portfolio-2.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>-->
+<!--                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>App 2</h4>
-                        <p>App</p>
-                        <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <h4>Fujitsu</h4>
+<!--                        <p>App</p>-->
+<!--                        <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>-->
+<!--                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                    <img src="assets/img/portfolio/portfolio-4.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>Card 2</h4>
-                        <p>Card</p>
-                        <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <h4>Midea</h4>
+<!--                        <p>Card</p>-->
+<!--                        <a href="assets/img/portfolio/portfolio-4.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>-->
+<!--                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                    <img src="assets/img/portfolio/portfolio-5.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>Web 2</h4>
-                        <p>Web</p>
-                        <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <h4>Gree</h4>
+<!--                        <p>Web</p>-->
+<!--                        <a href="assets/img/portfolio/portfolio-5.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>-->
+<!--                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>App 3</h4>
-                        <p>App</p>
-                        <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        <h4>Toshiba</h4>
+<!--                        <p>App</p>-->
+<!--                        <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>-->
+<!--                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <h4>Card 1</h4>
-                        <p>Card</p>
-                        <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                </div>
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-card">-->
+<!--                    <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">-->
+<!--                    <div class="portfolio-info">-->
+<!--                        <h4>Card 1</h4>-->
+<!--                        <p>Card</p>-->
+<!--                        <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>-->
+<!--&lt;!&ndash;                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <h4>Card 3</h4>
-                        <p>Card</p>
-                        <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                </div>
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-card">-->
+<!--                    <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">-->
+<!--                    <div class="portfolio-info">-->
+<!--                        <h4>Card 3</h4>-->
+<!--                        <p>Card</p>-->
+<!--                        <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>-->
+<!--&lt;!&ndash;                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <h4>Web 3</h4>
-                        <p>Web</p>
-                        <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                </div>
+<!--                <div class="col-lg-4 col-md-6 portfolio-item filter-web">-->
+<!--                    <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">-->
+<!--                    <div class="portfolio-info">-->
+<!--                        <h4>Web 3</h4>-->
+<!--                        <p>Web</p>-->
+<!--                        <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>-->
+<!--&lt;!&ndash;                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
 
             </div>
-
+            <div class="col cta-btn-container text-center">
+                <a class="services-btn align-middle" style="padding: 20px">Всички климатици които предлагаме</a>
+            </div>
         </div>
     </section><!-- End Portfolio Section -->
 
@@ -554,9 +402,9 @@
                                 <textarea class="form-control" name="message" rows="5" placeholder="Въведете вашият въпрост тук" required></textarea>
                             </div>
                             <div class="my-3">
-                                <div class="loading">Loading</div>
+                                <div class="loading">Зареждане</div>
                                 <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                                <div class="sent-message">Вашето съобщение беше изпратени. Благодарим ви!</div>
                             </div>
                             <div class="text-center"><button type="submit">Изпрати</button></div>
                         </form>

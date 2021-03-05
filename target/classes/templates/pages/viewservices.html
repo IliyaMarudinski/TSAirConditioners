@@ -1,0 +1,42 @@
+<section class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <ol>
+            </ol>
+        </div>
+
+    </div>
+</section><!-- End Breadcrumbs Section -->
+
+<!-- ======= Services Section ======= -->
+<section id="services">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h3 class="section-title">Предлагаме следните услуги</h3>
+            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" th:each="service:${services}">
+                <div class="box2">
+<!--                    <div class="icon"><a ><i class="bi bi-card-checklist"></i></a ></div>-->
+                    <h3 class="title_service"><a th:text="${service.name}"></a></h3>
+                    <h4 th:text="${service.description}"></h4>
+                    <h2 th:text="${service.price + 'лв.'}"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section><!-- End Services Section -->
+
+<section class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <ol>
+            </ol>
+        </div>
+
+    </div>
+</section><!-- End Breadcrumbs Section -->

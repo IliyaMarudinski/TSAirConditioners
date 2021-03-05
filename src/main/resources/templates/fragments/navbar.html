@@ -1,60 +1,10 @@
-<!--<nav class="navbar navbar-expand-lg navbar-light bg-light nav-margin">-->
-
-<!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-<!--    <ul class="navbar-nav mr-auto">-->
-<!--      <li class="nav-item active">-->
-<!--        <a class="nav-link" th:href="@{/}">Начало <span class="sr-only">(current)</span></a>-->
-<!--      </li>-->
-<!--      <li class="nav-item active">-->
-<!--          <a class="nav-link" th:href="@{/}"> <b>Каталог</b> <span class="sr-only">(current)</span></a>-->
-<!--      </li>-->
-<!--      <li class="nav-item active">-->
-<!--          <a class="nav-link" th:href="@{/}"> Услуги <span class="sr-only">(current)</span></a>-->
-<!--      </li>-->
-<!--      <li class="nav-item active">-->
-<!--          <a class="nav-link" th:href="@{/}"> За нас <span class="sr-only">(current)</span></a>-->
-<!--      </li>-->
-<!--      <li sec:authorize="isAuthenticated" class="nav-item">-->
-<!--            <a class="nav-link" th:href="@{/user/profile/{id}(id=${userId})}">Моят профил</a>-->
-<!--	  </li>-->
-<!--	  <li sec:authorize="isAuthenticated" class="nav-item">-->
-<!--	    <a class="nav-link" th:href="@{/logout}">Отписване</a>-->
-<!--	  </li>-->
-<!--    </ul>-->
-<!--    <form sec:authorize="isAnonymous()" class="form-inline my-2 my-lg-0">-->
-<!--&lt;!&ndash;-->
-<!-- 		<input class="form-control" name="username" id="inputUsername" aria-describedby="usernameHelp" placeholder="Username">-->
-<!--		<input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">-->
-<!-- &ndash;&gt;-->
-<!--	    <a class="nav-link" th:href="@{/user/login}">Вход</a>-->
-<!--	    <a class="nav-link" th:href="@{/user/register}">Регистрация</a>-->
-<!--    </form>-->
-<!--    <form th:action="@{/user/searchUser}" method="post" sec:authorize="isAuthenticated" class="form-inline my-2 my-lg-0">-->
-<!--      <a class="nav-link" th:href="@{/pages/newguide}">Моите запазени климатици</a>-->
-<!--      <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link" th:href="@{/admin/editgamedata}">Админ</a>-->
-<!--      <input th:name="searchword" class="form-control mr-sm-2" type="search" placeholder="Search user" aria-label="Search">-->
-<!--      &lt;!&ndash;-->
-<!--      <select class=" form-control  mr-sm-2 btn btn-dark" name="searchBy" id="searchBy">-->
-<!--	    <option value="hero">By Hero</option>-->
-<!--	    <option value="user">By User</option>-->
-<!--	  </select>-->
-<!--       &ndash;&gt;-->
-<!--	  <br><br>-->
-<!--&lt;!&ndash;-->
-<!--      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-<!-- &ndash;&gt;-->
-<!--	  <button class="btn btn-dark form-control  mr-sm-2"  type="submit">Search</button>-->
-<!--    </form>-->
-<!--  </div>-->
-<!--</nav>-->
-
 <!-- ======= Header ======= -->
     <div class="container d-flex justify-content-between align-items-center">
 
         <div id="logo">
             <a th:href="@{/}"><img src="assets/img/TasevLogo.png" alt=""></a>
-            <!-- Uncomment below if you prefer to use a text logo -->
-            <!--<h1><a href="index.html">Regna</a></h1>-->
+<!--             Uncomment below if you prefer to use a text logo -->
+<!--            <h1><a th:href="@{/}" href="index.html">Климатици тасев</a></h1>-->
         </div>
 
         <nav id="navbar" class="navbar">
@@ -64,7 +14,7 @@
                 <li><a class="nav-link scrollto" href="#services">Услуги</a></li>
                 <li><a class="nav-link scrollto " href="#portfolio">Каталог</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Контакти</a></li>
-                <li sec:authorize="isAuthenticated"><a class="nav-link scrollto " th:href="@{/user/profile/{id}(id=${userId})}">Моят Профил</a></li>
+<!--                <li sec:authorize="isAuthenticated"><a class="nav-link scrollto " th:href="@{/user/profile/{id}(id=${userId})}">Моят Профил</a></li>-->
                 <li sec:authorize="hasRole('ROLE_ADMIN')"><a class="nav-link scrollto " th:href="@{/admin/articles}">Админ</a></li>
                 <li sec:authorize="isAuthenticated"><a class="nav-link scrollto " th:href="@{/logout}">Отписване</a></li>
                 <li sec:authorize="isAnonymous()"><a class="nav-link scrollto" th:href="@{/user/register}">Регистрация</a></li>
