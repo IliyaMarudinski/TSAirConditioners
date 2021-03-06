@@ -12,7 +12,7 @@ public interface AirConditionersRepository extends JpaRepository<AirConditioners
 	
 	AirConditioners findByName(String name);
 	
-	@Query(value = "select NAME from airconditioner", nativeQuery = true)
-	public List<String> getAllConditionersNames();
+//	@Query(value = "select NAME from airconditioner", nativeQuery = true)
+//	public List<String> getAllConditionersNames();
 	
 }

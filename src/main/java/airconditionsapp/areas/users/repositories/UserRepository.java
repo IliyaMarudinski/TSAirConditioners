@@ -17,8 +17,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	User findByUsername(String username);	
 	User findById(int id);
 	List<User>findByUsernameContaining(String input);
-	@Query(value = "select users_id from users_favorite_guides where users_id = :id and favorite_guides_id = :guideId", nativeQuery = true)
-	String isGuideAlreadyExist(int id, int guideId);
 	
 	@Modifying
 	@Transactional

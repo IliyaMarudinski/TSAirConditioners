@@ -3,16 +3,10 @@ package airconditionsapp.areas.articles.entities;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name="hero_roles")
+@Table(name="brands")
 public class Brands {
     private int id;
     private String name;
@@ -41,13 +35,12 @@ public class Brands {
 		this.name = name;
 	}
 
-	@ManyToMany(mappedBy = "heroRoles")
-	public Set<AirConditioners> getHeroes() {
+	@OneToMany(mappedBy = "brands")
+	public Set<AirConditioners> getAirConditioners() {
 		return airConditioners;
 	}
 
-	public void setHeroes(Set<AirConditioners> airConditioners) {
+	public void setAirConditioners(Set<AirConditioners> airConditioners) {
 		this.airConditioners = airConditioners;
 	}
-    
 }

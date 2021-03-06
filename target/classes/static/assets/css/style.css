@@ -655,6 +655,12 @@ section {
   border: 3px solid #0067ab;
   position: relative;
   background: #e8f6ff;
+  border-radius: 50px;
+}
+
+#services .box2:hover {
+  background: #0067ab;
+  color: white;
 }
 
 .services-btn {
@@ -724,13 +730,17 @@ section {
   text-transform: uppercase;
 }
 
-#services .title_service {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  color: #0067ab;
-}
+/*#services .title_service {*/
+/*  font-size: 22px;*/
+/*  font-weight: bold;*/
+/*  margin-bottom: 15px;*/
+/*  text-transform: uppercase;*/
+/*  color: #0067ab;*/
+/*}*/
+/*#services .title_service:hover {*/
+/*  color: White;*/
+/*}*/
+
 
 #services .title a {
   color: #111;

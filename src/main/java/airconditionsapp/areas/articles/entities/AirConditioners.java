@@ -3,17 +3,7 @@ package airconditionsapp.areas.articles.entities;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.Lob;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "airconditioner")
@@ -23,18 +13,20 @@ public class AirConditioners {
 	private String img;
 	private String description;
 	private String shortDescription;
-	private Set<Brands> brands = new HashSet<Brands>();
+	private Brands brands;
 	
 	public AirConditioners() {
 	}
-	
-	public AirConditioners(String name, String imgPath, String description, String shortDescription) {
+
+	public AirConditioners(String name, String img, String description, String shortDescription, Brands brands) {
 		this.name = name;
-		this.img = imgPath;
+		this.img = img;
 		this.description = description;
 		this.shortDescription = shortDescription;
+		this.brands = brands;
 	}
-	
+
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
@@ -53,17 +45,13 @@ public class AirConditioners {
 		this.name = name;
 	}
 	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "hero_role")
-	public Set<Brands> getHeroRoles() {
+	@OneToOne(fetch = FetchType.EAGER)
+	public Brands getBrands() {
 		return brands;
 	}
-	public void setHeroRoles(Set<Brands> brands) {
+
+	public void setBrands(Brands brands) {
 		this.brands = brands;
-	}
-	@Transient
-	public void addHeroRole(Brands role) {
-		this.brands.add(role);
 	}
 	
 	@Column(name = "img")
