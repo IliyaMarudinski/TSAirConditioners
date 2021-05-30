@@ -6,7 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="37b78bc4-1e7c-4111-ba3f-b0eb823b8c3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TasevAirConditioners.docx" beforeDir="false" afterPath="$PROJECT_DIR$/TasevAirConditioners.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/controller/AdminArticlesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/controller/AdminArticlesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/entities/AirConditioners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/entities/AirConditioners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/AirConditionersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/AirConditionersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/BrandsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/BrandsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/EnvService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/EnvService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/EnvServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/EnvServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/constants/ViewConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/constants/ViewConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/adminpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/adminpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/com.example/demo/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/com.example/demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/controller/AdminArticlesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/controller/AdminArticlesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/entities/AirConditioners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/entities/AirConditioners.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/repositories/AirConditionersRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/repositories/AirConditionersRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/services/EnvService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/services/EnvService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/services/EnvServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/services/EnvServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/constants/ViewConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/constants/ViewConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/adminpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/adminpage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +61,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/assets/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -57,6 +74,7 @@
       <recent name="airconditionsapp.areas.articles.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\TaseviAirConditioners\src\main\resources\templates\admin" />
       <recent name="D:\TaseviAirConditioners\src\main\resources\static\assets\css" />
       <recent name="D:\TaseviAirConditioners\src\main\resources\static\assets\fonts" />
       <recent name="D:\TaseviAirConditioners\src\main\resources\templates\home" />
@@ -64,6 +82,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.TasevAirConditioners">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="D:/TaseviAirConditioners" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -190,6 +219,7 @@
       <workItem from="1614881950734" duration="21049000" />
       <workItem from="1614980365350" duration="4289000" />
       <workItem from="1615015218097" duration="1774000" />
+      <workItem from="1622384754007" duration="28570000" />
     </task>
     <servers />
   </component>

@@ -85,6 +85,34 @@
                     </tr>
                     </tbody>
                 </table>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Редактиране и изтриване на климатик</th>
+                        <!--                        <th scope="col">Цена</th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="col">
+                            <div class="col cta-btn-container text-center">
+                                <a class="services-btn align-middle" style="padding: 20px" th:href="@{/admin/addconditioner}" >Добавяне на нов климатик</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr th:each="conditioner:${conditioners}">
+                        <th scope="col">
+                            <label class = "form-control mr-sm-2" name="service_name"  th:text="${conditioner.name}" >
+                        </th>
+                        <th>
+                            <a th:href="@{/admin/conditioner_update/{id}(id=${conditioner.id})}" class="btn btn-primary">Ъпдейт</a>
+                        </th>
+                        <th>
+                            <a th:href="@{/admin/conditioner_delete/{id}(id=${conditioner.id})}" class="btn btn-danger">Изтрий</a>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
             </form>
         </div>
     </div>

@@ -1,0 +1,106 @@
+
+<section class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <ol>
+            </ol>
+        </div>
+
+    </div>
+</section><!-- End Breadcrumbs Section -->
+
+
+<div class="row justify-content-around mt-5">
+    <!--    <form>-->
+    <!--        <div class='col-auto'>-->
+    <!--            <div class="row">-->
+    <!--                <h2>Heroes</h2>-->
+    <!--            </div>-->
+    <!--            <div class='row'>-->
+    <!--                <a th:href="@{/admin/update_heroes}" class="btn btn-primary">Update from Api</a>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </form>-->
+
+    <!--    <div class='col-auto'>-->
+    <!--        <div class="row">-->
+    <!--            <h2>Items</h2>-->
+    <!--        </div>-->
+    <!--        <div class='row'>-->
+    <!--            <a th:href="@{/admin/update_items}" class="btn btn-primary">Update from Api</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <div class='col-auto'>
+        <div class="row">
+            <h2>Добавяне на климатик</h2>
+        </div>
+        <form th:action="@{/admin/add_conditioner}" method="post">
+            <div class="row">
+               <div class='col'>
+                    <a scope="row">Попълнете информацията в следните полета:</a>
+                    <div class='row mt-4'>
+                        <a scope="col">Заглавие(Марка, модел):</a>
+                        <input class = "form-control mr-sm-2" name="name" placeholder="Заглавие">
+                    </div>
+                   <div class='row mt-2'>
+                       <a scope="col">Марка:</a>
+                       <div >
+                           <input class = "form-control" type="text" name="brands" id="displayValue"
+                                  placeholder="добави/избери марка" onfocus="this.select()">
+                           <input name="idValue" id="idValue" type="hidden">
+                           <select placeholder="изберете марка тук" class = "form-control" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+                               <option>изберете марка тук</option>
+                               <option th:each="brand:${brands}" th:value="${brand.name}"  th:text="${brand.name}"></option>
+                           </select>
+                       </div>
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Сила:</a>
+                       <input class = "form-control mr-sm-2" name="power" placeholder="Сила">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Гаранция:</a>
+                       <input class = "form-control mr-sm-2" name="warrenty" placeholder="Гаранция">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Обем на помещението:</a>
+                       <input class = "form-control mr-sm-2" name="roomVolume" placeholder="Обем">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Енергиен клас:</a>
+                       <input class = "form-control mr-sm-2" name="energyClass" placeholder="Енергиен клас">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Размери външно тяло:</a>
+                       <input class = "form-control mr-sm-2" name="outSize" placeholder="Размери външно тяло">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Размери вътрешно тяло:</a>
+                       <input class = "form-control mr-sm-2" name="inSize" placeholder="Размери вътрешно тяло">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Цена:</a>
+                       <input class = "form-control mr-sm-2" name="price" placeholder="Цена">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Промо Цена:</a>
+                       <input class = "form-control mr-sm-2" name="promoPrice" placeholder="Промо Цена">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Изберете снимка:</a>
+                       <input class="form-control" type="file" name="img" id="formFileMultiple" multiple />
+                   </div>
+                </div>
+                <div class="col">
+                    <a scope="row">Въведи описание тук:</a>
+                    <textarea class="col form-control" id="descriptionText" name="description" rows="30"></textarea>
+                    <th scope="row mb-4">
+                        <button type="submit" class="btn btn-primary">Запазване</button>
+                    </th>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

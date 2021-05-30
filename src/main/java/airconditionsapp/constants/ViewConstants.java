@@ -17,4 +17,8 @@ public interface ViewConstants {
 	String SearchResultView = "user/searchResult";
 
 	String ViewService = "pages/viewservices";
+
+	String AddConditioner = "admin/addconditioner";
+
+	String UpdateConditioner = "admin/updateconditioner";
 }

@@ -1,0 +1,107 @@
+
+<section class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <ol>
+            </ol>
+        </div>
+
+    </div>
+</section><!-- End Breadcrumbs Section -->
+
+
+<div class="row justify-content-around mt-5">
+    <!--    <form>-->
+    <!--        <div class='col-auto'>-->
+    <!--            <div class="row">-->
+    <!--                <h2>Heroes</h2>-->
+    <!--            </div>-->
+    <!--            <div class='row'>-->
+    <!--                <a th:href="@{/admin/update_heroes}" class="btn btn-primary">Update from Api</a>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </form>-->
+
+    <!--    <div class='col-auto'>-->
+    <!--        <div class="row">-->
+    <!--            <h2>Items</h2>-->
+    <!--        </div>-->
+    <!--        <div class='row'>-->
+    <!--            <a th:href="@{/admin/update_items}" class="btn btn-primary">Update from Api</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <div class='col-auto'>
+        <div class="row">
+            <h2>Добавяне на климатик</h2>
+        </div>
+        <form th:action="@{/admin/conditioner_update}" method="post">
+            <div class="row">
+               <div class='col'>
+                    <a scope="row">Попълнете информацията в следните полета:</a>
+                   <div class="hidden" name="id" th:value="${conditioner.id}"></div>
+                    <div class='row mt-4'>
+                        <a scope="col">Заглавие(Марка, модел):</a>
+                        <input class = "form-control mr-sm-2" name="name" th:value="${conditioner.name}">
+                    </div>
+                   <div class='row mt-2'>
+                       <a scope="col">Марка:</a>
+                       <div >
+                           <input class = "form-control" type="text" name="brands" id="displayValue" th:value="${conditioner.brands.name}"
+                                  placeholder="добави/избери марка" onfocus="this.select()">
+                           <input name="idValue" id="idValue" type="hidden">
+                           <select placeholder="изберете марка тук" class = "form-control" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+                               <option>изберете марка тук</option>
+                               <option th:each="brand:${brands}" th:value="${brand.name}"  th:text="${brand.name}"></option>
+                           </select>
+                       </div>
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Сила:</a>
+                       <input class = "form-control mr-sm-2" name="power"  th:value="${conditioner.power}" >
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Гаранция:</a>
+                       <input class = "form-control mr-sm-2" name="warrenty" th:value="${conditioner.warrenty}">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Обем на помещението:</a>
+                       <input class = "form-control mr-sm-2" name="roomVolume" th:value="${conditioner.roomVolume}">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Енергиен клас:</a>
+                       <input class = "form-control mr-sm-2" name="energyClass" th:value="${conditioner.energyClass}">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Размери външно тяло:</a>
+                       <input class = "form-control mr-sm-2" name="outSize" th:value="${conditioner.outSize}">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Размери вътрешно тяло:</a>
+                       <input class = "form-control mr-sm-2" name="inSize" th:value="${conditioner.inSize}">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Цена:</a>
+                       <input class = "form-control mr-sm-2" name="price" th:value="${conditioner.price}">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Промо Цена:</a>
+                       <input class = "form-control mr-sm-2" name="promoPrice" th:value="${conditioner.promoPrice}">
+                   </div>
+                   <div class='row mt-4'>
+                       <a scope="col">Изберете снимка:</a>
+                       <input class="form-control" type="file" name="img" id="formFileMultiple" multiple th:value="${conditioner.img}" />
+                   </div>
+                </div>
+                <div class="col">
+                    <a scope="row">Въведи описание тук:</a>
+                    <textarea class="col form-control" id="descriptionText" name="description" rows="30" th:text="${conditioner.description}"></textarea>
+                    <th scope="row mb-4">
+                        <button type="submit" class="btn btn-primary" >Ъпдейт</button>
+                    </th>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

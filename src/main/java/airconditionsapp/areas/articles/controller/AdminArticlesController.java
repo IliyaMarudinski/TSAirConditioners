@@ -1,5 +1,6 @@
 package airconditionsapp.areas.articles.controller;
 
+import airconditionsapp.areas.articles.model.binding.ConditionerAddModelBinding;
 import airconditionsapp.areas.articles.services.EnvService;
 import airconditionsapp.constants.ViewConstants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,8 @@ public class AdminArticlesController {
 
 	@GetMapping("articles")
 	public String AdminArticles(Model model) {
-		
 		model.addAttribute("services",dataService.getAllServices(Sort.by(Sort.Direction.DESC, "itemNum")));
+		model.addAttribute("conditioners", dataService.getAllAerConditioners());
 		model.addAttribute("view",ViewConstants.AdminView);
 		return ViewConstants.BaseLayoutView;
 	}
@@ -42,6 +43,21 @@ public class AdminArticlesController {
 		
 		return "redirect:/admin/articles" ;
 	}
+
+	@PostMapping("add_conditioner")
+	public String addService(ConditionerAddModelBinding model) {
+
+		dataService.addConditioner(model);
+
+		return "redirect:/admin/articles" ;
+	}
+	@PostMapping("conditioner_update")
+	public String updateCondition(ConditionerAddModelBinding model) {
+
+		dataService.updateCondition(model);
+
+		return "redirect:/admin/articles" ;
+	}
 	
 	@GetMapping("service_delete/{id}")
 	public String deleteService(@PathVariable Integer id) {
@@ -51,12 +67,35 @@ public class AdminArticlesController {
 		return "redirect:/admin/articles" ;
 	}
 
+	@GetMapping("conditioner_delete/{id}")
+	public String deleteConditioner(@PathVariable Integer id) {
+
+		dataService.deleteCondition(id);
+
+		return "redirect:/admin/articles" ;
+	}
+
 	@GetMapping("service_update/{id}")
 	public String updatedService(@PathVariable Integer id) {
 
 //		dataService.deleteService(id);
 
 		return "redirect:/admin/articles" ;
+	}
+
+	@GetMapping("conditioner_update/{id}")
+	public String updateConditioner(@PathVariable Integer id, Model model) {
+		model.addAttribute("conditioner",dataService.findAerConditionerById(id));
+		model.addAttribute("brands",dataService.getAllBrands());
+		model.addAttribute("view",ViewConstants.UpdateConditioner);
+		return ViewConstants.BaseLayoutView;
+	}
+
+	@GetMapping("addconditioner")
+	public String AdminAddConditioner(Model model) {
+		model.addAttribute("brands",dataService.getAllBrands());
+		model.addAttribute("view",ViewConstants.AddConditioner);
+		return ViewConstants.BaseLayoutView;
 	}
 
 }

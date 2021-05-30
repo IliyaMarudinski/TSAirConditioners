@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface AirConditionersRepository extends JpaRepository<AirConditioners, Integer> {
 	
 	AirConditioners findByName(String name);
-	
+	AirConditioners findById(int id);
 //	@Query(value = "select NAME from airconditioner", nativeQuery = true)
 //	public List<String> getAllConditionersNames();
 	

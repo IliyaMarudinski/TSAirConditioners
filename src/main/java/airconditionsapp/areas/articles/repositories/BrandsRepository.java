@@ -9,6 +9,5 @@ import airconditionsapp.areas.articles.entities.Brands;
 public interface BrandsRepository extends JpaRepository<Brands, Integer> {
 	
 	Brands findByName(String name);
-//	List<String> findNames();
 	
 }
