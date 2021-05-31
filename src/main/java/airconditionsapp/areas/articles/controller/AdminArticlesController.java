@@ -51,9 +51,9 @@ public class AdminArticlesController {
 
 		return "redirect:/admin/articles" ;
 	}
-	@PostMapping("conditioner_update")
-	public String updateCondition(ConditionerAddModelBinding model) {
-
+	@PostMapping("conditioner_update/{id}")
+	public String updateCondition(ConditionerAddModelBinding model, @PathVariable Integer id) {
+        model.setId(id);
 		dataService.updateCondition(model);
 
 		return "redirect:/admin/articles" ;
@@ -85,6 +85,7 @@ public class AdminArticlesController {
 
 	@GetMapping("conditioner_update/{id}")
 	public String updateConditioner(@PathVariable Integer id, Model model) {
+		model.addAttribute("conditionerId", id);
 		model.addAttribute("conditioner",dataService.findAerConditionerById(id));
 		model.addAttribute("brands",dataService.getAllBrands());
 		model.addAttribute("view",ViewConstants.UpdateConditioner);

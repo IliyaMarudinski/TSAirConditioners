@@ -36,7 +36,7 @@
         <div class="row">
             <h2>Добавяне на климатик</h2>
         </div>
-        <form th:action="@{/admin/conditioner_update}" method="post">
+        <form th:action="@{/admin/conditioner_update/{id}(id=${conditionerId})}" method="post">
             <div class="row">
                <div class='col'>
                     <a scope="row">Попълнете информацията в следните полета:</a>

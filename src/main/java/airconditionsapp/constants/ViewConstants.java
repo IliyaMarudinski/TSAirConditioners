@@ -21,4 +21,8 @@ public interface ViewConstants {
 	String AddConditioner = "admin/addconditioner";
 
 	String UpdateConditioner = "admin/updateconditioner";
+
+	String ViewConditioner = "pages/viewconditioners";
+
+	String ViewConditionerPreview = "pages/conditionerpreview";
 }

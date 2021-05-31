@@ -70,22 +70,25 @@ public class EnvServiceImpl implements EnvService {
 	}
 	@Override
 	public void updateCondition(ConditionerAddModelBinding model) {
-		AirConditioners condition;
+		AirConditioners conditioner;
+		System.out.println("!!!!!!!conditioner id :" + model.getId());
 		Brands brand = addBrand(model.getBrands());
-		condition = airConditionerRepo.findById(model.getId());
-		condition.setName(model.getName());
-		condition.setImg(model.getImg());
-		condition.setDescription(model.getDescription());
-		condition.setBrands(brand);
-		condition.setRoomVolume(model.getRoomVolume());
-		condition.setWarrenty(model.getWarrenty());
-		condition.setPower(model.getPower());
-		condition.setEnergyClass(model.getEnergyClass());
-		condition.setOutSize(model.getOutSize());
-		condition.setInSize(model.getInSize());
-		condition.setPrice(model.getPrice());
-		condition.setPromoPrice(model.getPromoPrice());
-		airConditionerRepo.save(condition);
+		conditioner = airConditionerRepo.findById(model.getId());
+
+		System.out.println("!!!!!!!brand name:" + brand.getName() + "!!!" + "conditioner mane :" + conditioner.getName());
+		conditioner.setName(model.getName());
+		conditioner.setImg(model.getImg());
+		conditioner.setDescription(model.getDescription());
+		conditioner.setBrands(brand);
+		conditioner.setRoomVolume(model.getRoomVolume());
+		conditioner.setWarrenty(model.getWarrenty());
+		conditioner.setPower(model.getPower());
+		conditioner.setEnergyClass(model.getEnergyClass());
+		conditioner.setOutSize(model.getOutSize());
+		conditioner.setInSize(model.getInSize());
+		conditioner.setPrice(model.getPrice());
+		conditioner.setPromoPrice(model.getPromoPrice());
+		airConditionerRepo.save(conditioner);
 	}
 	@Override
 	public Brands addBrand(String brandName) {
