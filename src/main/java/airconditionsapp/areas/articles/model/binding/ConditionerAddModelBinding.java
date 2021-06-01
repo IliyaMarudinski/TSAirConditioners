@@ -1,5 +1,7 @@
 package airconditionsapp.areas.articles.model.binding;
 
+import java.util.List;
+
 public class ConditionerAddModelBinding {
     private int id;
     private String name;
@@ -14,6 +16,7 @@ public class ConditionerAddModelBinding {
     private String inSize;
     private double price;
     private double promoPrice;
+    private List<String> images;
 
     public double getPromoPrice() {
         return promoPrice;
@@ -118,4 +121,22 @@ public class ConditionerAddModelBinding {
     public void setInSize(String inSize) {
         this.inSize = inSize;
     }
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
+//    public List<String> splitImgs(){
+//        String str = this.getImg();
+//        String[] arrOfStr = str.split(",", 10);
+//
+//        for (String a : arrOfStr)
+//            images.add(a);
+//
+//        System.out.println("CHECK--- size" + images.size());
+//    }
 }

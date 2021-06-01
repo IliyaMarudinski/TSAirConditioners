@@ -14,5 +14,6 @@ public interface ServicesRepository extends JpaRepository<Services, Integer>{
 	Services findByName(String name);
 	Services findById(int id);
 	@Query(value = "select NAME from SERVICES", nativeQuery = true)
-	public List<String> getAllServicesNames();
+	List<String> getAllServicesNames();
+	List<Services> findAllByOrderByItemNumDesc();
 }

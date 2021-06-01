@@ -63,11 +63,21 @@
                    </div>
                    <div class='row mt-4'>
                        <a scope="col">Гаранция:</a>
-                       <input class = "form-control mr-sm-2" name="warrenty" th:value="${conditioner.warrenty}">
+                       <input class = "form-control mr-sm-2" name="warrenty" th:value="${conditioner.warrenty}"  onkeydown="return ( event.ctrlKey || event.altKey
+                    || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false)
+                    || (95<event.keyCode && event.keyCode<106)
+                    || (event.keyCode==8) || (event.keyCode==9)
+                    || (event.keyCode>34 && event.keyCode<40)
+                    || (event.keyCode==46) )" type="number">
                    </div>
                    <div class='row mt-4'>
                        <a scope="col">Обем на помещението:</a>
-                       <input class = "form-control mr-sm-2" name="roomVolume" th:value="${conditioner.roomVolume}">
+                       <input class = "form-control mr-sm-2" name="roomVolume" th:value="${conditioner.roomVolume}"  onkeydown="return ( event.ctrlKey || event.altKey
+                    || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false)
+                    || (95<event.keyCode && event.keyCode<106)
+                    || (event.keyCode==8) || (event.keyCode==9)
+                    || (event.keyCode>34 && event.keyCode<40)
+                    || (event.keyCode==46) )" type="number">
                    </div>
                    <div class='row mt-4'>
                        <a scope="col">Енергиен клас:</a>
@@ -83,11 +93,11 @@
                    </div>
                    <div class='row mt-4'>
                        <a scope="col">Цена:</a>
-                       <input class = "form-control mr-sm-2" name="price" th:value="${conditioner.price}">
+                       <input class = "form-control mr-sm-2" name="price" th:value="${conditioner.price}" type="number">
                    </div>
                    <div class='row mt-4'>
                        <a scope="col">Промо Цена:</a>
-                       <input class = "form-control mr-sm-2" name="promoPrice" th:value="${conditioner.promoPrice}">
+                       <input class = "form-control mr-sm-2" name="promoPrice" th:value="${conditioner.promoPrice}" type="number">
                    </div>
                    <div class='row mt-4'>
                        <a scope="col">Изберете снимка:</a>

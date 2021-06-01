@@ -31,11 +31,12 @@ public class EnvServiceImpl implements EnvService {
 
 	@Override
 	public List<Services> getAllServices(Sort by) {
-		return serviceRepo.findAll();
+		return serviceRepo.findAllByOrderByItemNumDesc();
 	}
 
 	@Override
-	public List<Brands> getAllBrands() {
+	public List<Brands> getAllBrands()
+	{
 		return brandsRepo.findAll();
 	}
 
@@ -120,6 +121,19 @@ public class EnvServiceImpl implements EnvService {
 	public AirConditioners findAerConditionerById(int id) {
 		AirConditioners airConditioners = airConditionerRepo.getOne(id);
 //		System.out.print("Conditioner name !!! " + airConditioners.getName());
+		return airConditioners;
+	}
+
+	@Override
+	public List<AirConditioners> getAllAerConditionersByFilters(String brandName, String power){
+		List<AirConditioners> airConditioners;
+		Brands brand = brandsRepo.findByName(brandName);
+		if(brand==null)
+			airConditioners = airConditionerRepo.findByPower(power);
+		else if(power.equals("Обем Стая"))
+			airConditioners = airConditionerRepo.findByBrandsId(brand.getId());
+		else
+			airConditioners = airConditionerRepo.findByBrandsIdAndPower(brand.getId(), power);
 		return airConditioners;
 	}
 

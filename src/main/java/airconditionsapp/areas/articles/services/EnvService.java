@@ -21,6 +21,7 @@ public interface EnvService {
 	List<Services> getAllServices(Sort by);
 	List<Brands> getAllBrands();
 	List<AirConditioners> getAllAerConditioners();
+	List<AirConditioners> getAllAerConditionersByFilters(String brandName, String power);
 	AirConditioners findAerConditionerById(int id);
 
 }

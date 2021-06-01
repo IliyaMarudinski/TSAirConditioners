@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("pages")
@@ -25,16 +26,24 @@ public class ArticlesController {
     @GetMapping("viewservices")
     public String ViewServices(Model model){
 
-        model.addAttribute("services", dataService.getAllServices(Sort.by(Sort.Direction.DESC, "itemNum")));
+        model.addAttribute("services", dataService.getAllServices(Sort.by(Sort.Direction.ASC, "item_num")));
         model.addAttribute("view", ViewConstants.ViewService);
         return ViewConstants.BaseLayoutView;
 
     }
     @GetMapping("viewconditioners")
-    public String ViewConditioners(Model model){
+    public String ViewConditioners(Model model, @RequestParam(value = "brandsDropDown", required = false)String brandName,
+                                   @RequestParam(value = "powerDropDown", required = false)String power){
+        System.out.println("HERE!!!" + brandName);
 
         model.addAttribute("brands",dataService.getAllBrands());
-        model.addAttribute("conditioners", dataService.getAllAerConditioners());
+        if(power==null || power.equals("Обем Стая") && brandName==null || brandName.equals("Филтрирай Марка Тук"))
+            model.addAttribute("conditioners", dataService.getAllAerConditioners());
+        else{
+            model.addAttribute("conditioners", dataService.getAllAerConditionersByFilters(brandName, power));
+            model.addAttribute("brandSelected", brandName);
+            model.addAttribute("powerSelected", power);
+        }
         model.addAttribute("view", ViewConstants.ViewConditioner);
         return ViewConstants.BaseLayoutView;
 
