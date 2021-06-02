@@ -6,31 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="37b78bc4-1e7c-4111-ba3f-b0eb823b8c3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/controller/ArticlesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/controller/ArticlesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/model/binding/ConditionerAddModelBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/model/binding/ConditionerAddModelBinding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/AirConditionersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/AirConditionersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/ServicesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/repositories/ServicesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/EnvService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/EnvService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/EnvServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/services/EnvServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/constants/ConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/constants/ConfigConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/addconditioner.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/addconditioner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/updateconditioner.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/updateconditioner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/scripts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/scripts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/viewconditioners.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/viewconditioners.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/viewservices.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/viewservices.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/controller/ArticlesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/controller/ArticlesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/model/binding/ConditionerAddModelBinding.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/repositories/AirConditionersRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/repositories/AirConditionersRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/repositories/ServicesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/repositories/ServicesRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/services/EnvService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/services/EnvService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/services/EnvServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/services/EnvServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/constants/ConfigConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/constants/ConfigConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/addconditioner.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/addconditioner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/updateconditioner.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/updateconditioner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/scripts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/scripts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/pages/viewconditioners.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pages/viewconditioners.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/pages/viewservices.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pages/viewservices.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/entities/AirConditioners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airconditionsapp/areas/articles/entities/AirConditioners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/conditionerpreview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/conditionerpreview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/entities/AirConditioners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/airconditionsapp/areas/articles/entities/AirConditioners.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pages/conditionerpreview.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pages/conditionerpreview.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +198,8 @@
       <workItem from="1615015218097" duration="1774000" />
       <workItem from="1622384754007" duration="29272000" />
       <workItem from="1622488482829" duration="13806000" />
-      <workItem from="1622569040478" duration="17613000" />
+      <workItem from="1622569040478" duration="17813000" />
+      <workItem from="1622663316072" duration="3607000" />
     </task>
     <servers />
   </component>

@@ -22,7 +22,7 @@ public class AirConditioners {
 	public AirConditioners() {
 	}
 
-	public AirConditioners(String name, String img, String description, Brands brands, int roomVolume, double warenty, String power, String energyClass, String outSize, String inSize, double price, double promopPrice) {
+	public AirConditioners(String name, String img, String description, Brands brands, int roomVolume, double warenty, String power, String energyClass, String outSize, String inSize, double price, double promoPrice) {
 		this.name = name;
 		this.img = img;
 		this.description = description;
