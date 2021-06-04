@@ -1,6 +1,9 @@
 package airconditionsapp.areas.articles.entities;
 
+import airconditionsapp.areas.users.entities.User;
+
 import javax.persistence.*;
+import java.util.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,11 +25,13 @@ public class AirConditioners {
 	private String inSize;
 	private double price;
 	private double promoPrice;
+	private Set<User> users = new HashSet<User>();
+	private List<String> mainImage = new ArrayList<>();
 	
 	public AirConditioners() {
 	}
 
-	public AirConditioners(String name, String img, String description, Brands brands, int roomVolume, double warenty, String power, String energyClass, String outSize, String inSize, double price, double promopPrice) {
+	public AirConditioners(String name, String img, String description, Brands brands, int roomVolume, double warenty, String power, String energyClass, String outSize, String inSize, double price, double promoPrice) {
 		this.name = name;
 		this.img = img;
 		this.description = description;
@@ -38,7 +43,7 @@ public class AirConditioners {
 		this.outSize = outSize;
 		this.inSize = inSize;
 		this.price = price;
-		this.promoPrice = promopPrice;
+		this.promoPrice = promoPrice;
 	}
 
 	@Id
@@ -151,5 +156,35 @@ public class AirConditioners {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-   
+
+	@Transient
+	public List<String> getMainImage() {
+		return mainImage;
+	}
+
+	public void setMainImage(String inputStr) {
+		if(inputStr.equals("")) return;
+		String[] splitStr = inputStr.split(",");
+		for (String str : splitStr)
+		  this.mainImage.add(str);
+	}
+	public void fillImageAray() {
+		if(this.img.equals("")) {
+			this.mainImage.add("images/air-conditioning.jpg");
+		} else{
+			String[] splitStr = this.img.split(",");
+			for (String str : splitStr)
+				this.mainImage.add("images/" + str);
+		}
+	}
+
+	@ManyToMany(mappedBy = "favoriteAirConditioners")
+	public Set<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+
 }

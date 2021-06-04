@@ -14,6 +14,7 @@ public interface EnvService {
 	
 	void addService(ServiceAddModelBinding model);
 	void deleteService(int id);
+	void updateService(int id, ServiceAddModelBinding model);
 	void addConditioner(ConditionerAddModelBinding model);
 	void deleteCondition(int id);
 	void updateCondition(ConditionerAddModelBinding model);
@@ -23,5 +24,6 @@ public interface EnvService {
 	List<AirConditioners> getAllAerConditioners();
 	List<AirConditioners> getAllAerConditionersByFilters(String brandName, String power);
 	AirConditioners findAerConditionerById(int id);
+	List<String> getAllRoomVolume();
 
 }

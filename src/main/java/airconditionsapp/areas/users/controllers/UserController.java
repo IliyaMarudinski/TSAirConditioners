@@ -49,5 +49,26 @@ public class UserController {
 		return "redirect:/user/profile";
 		
 	}
-	
+
+
+	@RequestMapping("addToFavorites/{id}")
+	public String addCondToFavorites(@PathVariable Integer id, Principal principal, RedirectAttributes redirectAttributes) {
+
+		if(userService.addToFavorites(id, principal.getName())) {
+			redirectAttributes.addFlashAttribute("msg","success");
+		}else {
+			redirectAttributes.addFlashAttribute("msg","warning");
+		}
+		return "redirect:/pages/conditionerpreview/" +id;
+	}
+	@RequestMapping("removeFromFavorites/{id}")
+	public String deleteFavorites(@PathVariable Integer id, Principal principal, RedirectAttributes redirectAttributes) {
+
+		userService.deleteFavorite(id, principal.getName());
+		redirectAttributes.addFlashAttribute("msg","success");
+
+		return "redirect:/pages/conditionerpreview/" +id;
+	}
+
+
 }
