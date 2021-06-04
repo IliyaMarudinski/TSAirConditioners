@@ -14,19 +14,19 @@
     <section id="portfolio" class="portfolio mt-5">
         <form th:action="@{/pages/viewconditioners}" method="get">
             <div class="row justify-content-md-center">
-                <div class="col-md-auto mt-4">
+                <div th:if="${showFilters}" class="col-md-auto mt-4">
                     <select placeholder="Филтрирай модел" class = "form-control" th:name="brandsDropDown" >
                         <option>Филтрирай Марка Тук</option>
-                        <option th:each="brand:${brands}" th:value="${brand.name}"  th:text="${brand.name}" th:selected="${brand.name} == ${brandSelected} ? true : false"></option>
+                        <option  th:each="brand:${brands}" th:value="${brand.name}"  th:text="${brand.name}" th:selected="${brand.name} == ${brandSelected} ? true : false"></option>
                     </select>
                 </div>
-                <div class="col-md-auto mt-4">
-                    <select placeholder="Филтрирай мощост" class = "form-control" th:name="powerDropDown">
+                <div th:if="${showFilters}" class="col-md-auto mt-4">
+                    <select placeholder="Обем Стая" class = "form-control" th:name="powerDropDown">
                         <option>Обем Стая</option>
-                        <option th:each="brand:${brands}" th:value="${brand.name}"  th:text="${brand.name}" th:selected="${brand.name} == ${powerSelected} ? true : false"></option>
+                        <option th:each="rVol:${rVolume}" th:value="${rVol}"  th:text="${rVol}" th:selected="${rVol} == ${powerSelected} ? true : false"></option>
                     </select>
                 </div>
-                <div class="col-md-auto">
+                <div  th:if="${showFilters}" class="col-md-auto">
                     <button class="services-btn align-middle cta-btn-container text-center details-link" type="submit" style="padding: 20px" >Филтрирай</button>
                 </div>
             </div>
@@ -43,10 +43,12 @@
             <!--                </div>-->
             <!--            </div>-->
 
-
+            <div th:if="${showEmptyList}" class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                <h4> Нямате добавени артикули в любими</h4>
+            </div>
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                 <div th:each="conditioner:${conditioners}" class="col-lg-4 col-md-6 portfolio-item filter-app mb-5" th:name="${conditioner.brands.name}">
-                    <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                    <img th:src="${conditioner.mainImage[0]}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4 th:text="${conditioner.name}"></h4>
                         <p  th:text="${conditioner.price + 'лв.'}"></p>

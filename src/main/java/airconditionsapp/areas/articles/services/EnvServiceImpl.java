@@ -91,6 +91,13 @@ public class EnvServiceImpl implements EnvService {
 		conditioner.setPromoPrice(model.getPromoPrice());
 		airConditionerRepo.save(conditioner);
 	}
+	public void updateService(int id, ServiceAddModelBinding model){
+		Services service = serviceRepo.findById(id);
+		service.setName(model.getName());
+		service.setDescription(model.getDescription());
+		service.setPrice(model.getPrice());
+		serviceRepo.save(service);
+	}
 	@Override
 	public Brands addBrand(String brandName) {
 		Brands brand;
@@ -114,12 +121,18 @@ public class EnvServiceImpl implements EnvService {
 
 	@Override
 	public List<AirConditioners> getAllAerConditioners() {
-		return airConditionerRepo.findAll();
+		List<AirConditioners> conditioners = airConditionerRepo.findAll();
+		for (AirConditioners item:
+				conditioners) {
+			item.fillImageAray();
+		}
+		return conditioners;
 	}
 
 	@Override
 	public AirConditioners findAerConditionerById(int id) {
 		AirConditioners airConditioners = airConditionerRepo.getOne(id);
+		airConditioners.fillImageAray();
 //		System.out.print("Conditioner name !!! " + airConditioners.getName());
 		return airConditioners;
 	}
@@ -134,7 +147,15 @@ public class EnvServiceImpl implements EnvService {
 			airConditioners = airConditionerRepo.findByBrandsId(brand.getId());
 		else
 			airConditioners = airConditionerRepo.findByBrandsIdAndPower(brand.getId(), power);
+		for (AirConditioners item:
+				airConditioners) {
+			item.fillImageAray();
+		}
 		return airConditioners;
+	}
+	@Override
+	public List<String> getAllRoomVolume(){
+		return airConditionerRepo.getAllRoomVolumes();
 	}
 
 }

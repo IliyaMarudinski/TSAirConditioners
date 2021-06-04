@@ -12,4 +12,6 @@ public interface UserService {
 	User getUserById(int id);
 	boolean updateUser(UpdateProfileBindingModel bindingModel);
 	List<User> searchUserByName(String searchWord);
+	boolean addToFavorites(int id, String user);
+	void deleteFavorite(int id, String user);
 }

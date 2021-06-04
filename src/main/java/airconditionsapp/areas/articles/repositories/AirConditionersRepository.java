@@ -15,7 +15,7 @@ public interface AirConditionersRepository extends JpaRepository<AirConditioners
 	List<AirConditioners> findByBrandsIdAndPower(int brandId, String power);
 	List<AirConditioners> findByBrandsId(int brandId);
 	List<AirConditioners> findByPower(String power);
-//	@Query(value = "select NAME from airconditioner", nativeQuery = true)
-//	public List<String> getAllConditionersNames();
-	
+	@Query(value = "SELECT DISTINCT ROOMVOLUME FROM AIRCONDITIONER ORDER BY ROOMVOLUME", nativeQuery = true)
+	List<String> getAllRoomVolumes();
+//DELETE * FROM USERS_FAVORITE_AIR_CONDITIONERS WHERE FAVORITE_AIR_CONDITIONERS_ID
 }

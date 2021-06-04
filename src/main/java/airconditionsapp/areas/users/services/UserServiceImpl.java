@@ -4,6 +4,8 @@ package airconditionsapp.areas.users.services;
 import java.util.List;
 import java.util.Set;
 
+import airconditionsapp.areas.articles.entities.AirConditioners;
+import airconditionsapp.areas.articles.services.EnvService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,19 +19,21 @@ import airconditionsapp.areas.users.repositories.UserRepository;
 public class UserServiceImpl implements UserService {
 	
 	private final UserRepository userRepository;
-//	private final GuideService guideService;
+	private final EnvService articleService;
 	
 	@Autowired
-//	public UserServiceImpl(UserRepository userRepository, GuideService guideService) {
-	public UserServiceImpl(UserRepository userRepository) {
+	public UserServiceImpl(UserRepository userRepository, EnvService articleService) {
 		this.userRepository = userRepository;
-//		this.guideService = guideService;
+		this.articleService = articleService;
 	}
 	
 	@Override
 	public User getUserByUsername(String username) {
 		
 		User user = this.userRepository.findByUsername(username);
+
+		user.getFavoriteAirConditioners().forEach((e) -> { e.fillImageAray(); });
+
 		return user; 
 	}
 
@@ -50,7 +54,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> searchUserByName(String searchWord) {
-		
+
 		return userRepository.findByUsernameContaining(searchWord);
 	}
 
@@ -60,32 +64,35 @@ public class UserServiceImpl implements UserService {
 		return userRepository.findById(id);
 	}
 
-//	@Override
-//	public boolean addToFavorites(int guideId, String user) {
-//
-//		Guide guide = guideService.getGuide(guideId);
-//		User loggedUser =userRepository.findByUsername(user);
-//		String returnValue = userRepository.isGuideAlreadyExist(loggedUser.getId(), guideId);
-//
-//		if( returnValue != null) {
-//
-//			return false;
-//		}
-//
-//		loggedUser.addFavoriteGuide(guide);
-//
-//		userRepository.save(loggedUser);
-//
-//		return true;
-//	}
-//
-//	@Override
-//	public void deleteFavorite(int id, String user) {
-//
-//		User loggedUser =userRepository.findByUsername(user);
-//
-//		userRepository.deleteFavorite(loggedUser.getId(), id);
-//
-//	}
+	@Override
+	public boolean addToFavorites(int id, String user) {
+
+		AirConditioners cond = articleService.findAerConditionerById(id);
+		User loggedUser =userRepository.findByUsername(user);
+
+		if( loggedUser.getFavoriteAirConditioners().contains(cond) ) {
+
+			return false;
+		}
+
+		loggedUser.addFavoriteAirConditioners(cond);
+
+		userRepository.save(loggedUser);
+
+		return true;
+	}
+
+	@Override
+	public void deleteFavorite(int id, String user) {
+
+		AirConditioners cond = articleService.findAerConditionerById(id);
+		User loggedUser =userRepository.findByUsername(user);
+
+		if( loggedUser.getFavoriteAirConditioners().contains(cond) ) {
+			loggedUser.removeFavoriteAirConditioners(cond);
+			userRepository.save(loggedUser);
+		} else return;
+
+	}
 
 }

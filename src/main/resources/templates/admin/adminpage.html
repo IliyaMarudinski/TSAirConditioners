@@ -54,7 +54,7 @@
                             <input class = "form-control mr-sm-2" name="description" placeholder="Описание">
                         </th>
                         <th scope="col">
-                            <input class = "form-control mr-sm-2" name="price" placeholder="Цена">
+                            <input class = "form-control mr-sm-2" type="number" name="price" placeholder="Цена">
                         </th>
                         <th scope="col">
                             <input class = "form-control mr-sm-2" type="number" name="itemNum" placeholder="Приоритет">
@@ -65,20 +65,20 @@
                     </tr>
                     <tr th:each="service:${services}">
                         <th scope="col">
-                            <input class = "form-control mr-sm-2" name="service_name"  th:value="${service.name}" placeholder="Заглавие">
+                            <input class = "form-control mr-sm-2" name="name1"  th:value="${service.name}" placeholder="Заглавие">
                         </th>
                         <th scope="col">
-                            <input class = "form-control mr-sm-2" name="service_description" th:value="${service.description}" placeholder="Описание">
+                            <input class = "form-control mr-sm-2" name="description1" th:value="${service.description}" placeholder="Описание">
                         </th>
                         <th scope="col">
-                            <input class = "form-control mr-sm-2" name="service_price" th:value="${service.price}" placeholder="Цена">
+                            <input class = "form-control mr-sm-2" type="number" name="price1" th:value="${service.price}" placeholder="Цена">
                         </th>
                         <th scope="col">
-                            <input class = "form-control mr-sm-2" type="number" name="service_itemNum" th:value="${service.itemNum}" placeholder="Приоритет">
+                            <input class = "form-control mr-sm-2" type="number" name="itemNum1" th:value="${service.itemNum}" placeholder="Приоритет">
                         </th>
-                        <th>
-                            <a th:href="@{/admin/service_update/{id}(id=${service.id})}" class="btn btn-primary">Ъпдейт</a>
-                        </th>
+<!--                        <th>-->
+<!--                            <a th:href="@{/admin/service_update/{id}(id=${service.id})}" class="btn btn-primary">Ъпдейт</a>-->
+<!--                        </th>-->
                         <th>
                             <a th:href="@{/admin/service_delete/{id}(id=${service.id})}" class="btn btn-danger">Изтрий</a>
                         </th>

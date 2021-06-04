@@ -1,6 +1,9 @@
 package airconditionsapp.areas.articles.entities;
 
+import airconditionsapp.areas.users.entities.User;
+
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
 @Table(name = "airconditioner")
@@ -18,6 +21,8 @@ public class AirConditioners {
 	private String inSize;
 	private double price;
 	private double promoPrice;
+	private Set<User> users = new HashSet<User>();
+	private List<String> mainImage = new ArrayList<>();
 	
 	public AirConditioners() {
 	}
@@ -147,5 +152,35 @@ public class AirConditioners {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-   
+
+	@Transient
+	public List<String> getMainImage() {
+		return mainImage;
+	}
+
+	public void setMainImage(String inputStr) {
+		if(inputStr.equals("")) return;
+		String[] splitStr = inputStr.split(",");
+		for (String str : splitStr)
+		  this.mainImage.add(str);
+	}
+	public void fillImageAray() {
+		if(this.img.equals("")) {
+			this.mainImage.add("images/air-conditioning.jpg");
+		} else{
+			String[] splitStr = this.img.split(",");
+			for (String str : splitStr)
+				this.mainImage.add("images/" + str);
+		}
+	}
+
+	@ManyToMany(mappedBy = "favoriteAirConditioners")
+	public Set<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+
 }

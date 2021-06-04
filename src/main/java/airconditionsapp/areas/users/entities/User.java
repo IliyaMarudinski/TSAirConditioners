@@ -34,7 +34,6 @@ public class User implements UserDetails {
 	private String password;	
 	private Set<Role> roles = new HashSet<>();
 	private Set<AirConditioners> favoriteAirConditioners = new HashSet<>();
-	//private Set<Guide> favoriteAirConditioners = new HashSet<>();
 	
 	public User() {
 	
@@ -157,5 +156,20 @@ public class User implements UserDetails {
 		return true;
 	}
 
-	
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	public Set<AirConditioners> getFavoriteAirConditioners() {
+		return favoriteAirConditioners;
+	}
+
+	public void setFavoriteAirConditioners(Set<AirConditioners> favoriteHeroes) {
+		this.favoriteAirConditioners = favoriteHeroes;
+	}
+
+	public void addFavoriteAirConditioners(AirConditioners cond) {
+		this.favoriteAirConditioners.add(cond);
+	}
+
+	public void removeFavoriteAirConditioners(AirConditioners cond) {
+		this.favoriteAirConditioners.remove(cond);
+	}
 }

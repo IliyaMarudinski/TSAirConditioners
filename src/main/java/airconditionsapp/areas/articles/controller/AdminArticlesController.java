@@ -76,9 +76,9 @@ public class AdminArticlesController {
 	}
 
 	@GetMapping("service_update/{id}")
-	public String updatedService(@PathVariable Integer id) {
+	public String updatedService(@PathVariable Integer id, ServiceAddModelBinding model) {
 
-//		dataService.deleteService(id);
+		dataService.updateService(id, model);
 
 		return "redirect:/admin/articles" ;
 	}
