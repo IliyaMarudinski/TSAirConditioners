@@ -389,7 +389,7 @@
                 </div>
                 <div class="col-lg-5 col-md-8">
                     <div class="form">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="forms/contact.php" th:action="@{/user/email}" method="post" role="form" class="php-email-form">
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" id="name" placeholder="Въведете вашето име" required>
                             </div>
@@ -397,10 +397,10 @@
                                 <input type="email" class="form-control" name="email" id="email" placeholder="Въведете вашия мейл адрес" required>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Въведете тема на вашето запитване" required>
+                                <input type="text" class="form-control" name="title" id="subject" placeholder="Въведете тема на вашето запитване" required>
                             </div>
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Въведете вашият въпрост тук" required></textarea>
+                                <textarea class="form-control" name="msg" rows="5" placeholder="Въведете вашият въпрост тук" required></textarea>
                             </div>
                             <div class="my-3">
                                 <div class="loading">Зареждане</div>

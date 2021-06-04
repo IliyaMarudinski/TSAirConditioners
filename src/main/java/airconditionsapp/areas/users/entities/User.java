@@ -156,7 +156,7 @@ public class User implements UserDetails {
 		return true;
 	}
 
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER)
 	public Set<AirConditioners> getFavoriteAirConditioners() {
 		return favoriteAirConditioners;
 	}

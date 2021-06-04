@@ -116,6 +116,9 @@ public class EnvServiceImpl implements EnvService {
 
 	@Override
 	public void deleteCondition(int id) {
+		
+		airConditionerRepo.deleteFromFavorites(id);
+				
 		airConditionerRepo.deleteById(id);
 	}
 

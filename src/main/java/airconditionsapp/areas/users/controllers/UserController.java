@@ -1,7 +1,11 @@
 package airconditionsapp.areas.users.controllers;
 
+import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -17,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import airconditionsapp.areas.users.entities.User;
+import airconditionsapp.areas.users.models.binding.EmailBindingModel;
 import airconditionsapp.areas.users.models.binding.UpdateProfileBindingModel;
 import airconditionsapp.areas.users.services.UserService;
 import airconditionsapp.constants.ViewConstants;
@@ -69,6 +74,13 @@ public class UserController {
 
 		return "redirect:/pages/conditionerpreview/" +id;
 	}
-
+	
+	@PostMapping("email")
+	public String sendMail(EmailBindingModel model) throws AddressException, MessagingException, IOException {
+		
+		userService.sendEmail(model);
+		
+		return "redirect:/";
+	}
 
 }
