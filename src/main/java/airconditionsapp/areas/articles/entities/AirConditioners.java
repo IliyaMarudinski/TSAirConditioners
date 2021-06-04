@@ -2,6 +2,10 @@ package airconditionsapp.areas.articles.entities;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "airconditioner")
 public class AirConditioners {
@@ -34,7 +38,7 @@ public class AirConditioners {
 		this.outSize = outSize;
 		this.inSize = inSize;
 		this.price = price;
-		this.promoPrice = promoPrice;
+		this.promoPrice = promopPrice;
 	}
 
 	@Id
@@ -120,7 +124,7 @@ public class AirConditioners {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	@JsonManagedReference
 	@OneToOne(fetch = FetchType.EAGER)
 	public Brands getBrands() {
 		return brands;

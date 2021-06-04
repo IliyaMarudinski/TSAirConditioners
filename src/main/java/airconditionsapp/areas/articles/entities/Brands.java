@@ -5,6 +5,9 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name="brands")
 public class Brands {
@@ -36,6 +39,7 @@ public class Brands {
 	}
 
 	@OneToMany(mappedBy = "brands")
+	@JsonBackReference	
 	public Set<AirConditioners> getAirConditioners() {
 		return airConditioners;
 	}
